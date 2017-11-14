@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form>
+  How many United States border the Gulf of Mexico?<br>
+  <input type="radio" name="colors" id="five">Five<br>
+  <input type="radio" name="colors" id="two">Two<br>
+  <input type="radio" name="colors" id="two">Three<br>
+  <input type="radio" name="colors" id="two">Six
+</form>
+
+<button onclick="check()">Check "Submit"</button>
+
+<script>
+function check() {
+    if(document.getElementById("five").checked){
+		document.write("Congrats, you answered correctly!");
+	}
+	else{
+		document.write("That is not correct.")
+	}
+}
+
+	
+	
+</script>
+
+</body>
+</html>

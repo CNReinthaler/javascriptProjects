@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>Music City Trivia Quiz</title>
+	<script type="text/javascript">
+		
+		//function to check if the user answered all the questions correctly 
+		function check() 
+		{
+			alert(correct);
+			var question1 = document.quiz.question1.value;
+			var question2 = doucment.quiz.question2.value;
+			var question3 = document.quiz.question3.value;
+			var correct = 0;
+			var total = 3;
+			
+			if(question1 == "Cumberland River"){
+				correct = correct + 1;
+			}
+			if(question1.checked == true){
+				correct++
+			}
+			if(document.getElementsByName('question3').checked == true){
+				correct++
+			}
+			
+			alert(correct);
+		
+			
+		}
+	</script>
+</head>
+<body>
+<h1>Music City Trivia Quiz</h1>
+
+<!--Questions 1-3 displayed in a form-->
+ <form id="quiz" name="quiz"> 
+  
+<p>What river runs through Nashville?</p>
+  <input type="text" id="textbox" name="question1">
+	 
+	 
+<p>What year was Nashville founded?</p>
+  <input type="radio" id="mc" name="question2" value="1815" >1815<br>
+  <input type="radio" id="mc" name="question2" value"Christmas Eve 1779">Christmas Eve 1779<br>
+  <input type="radio" id="mc" name="question2" value="1720">1720<br>
+  <input type="radio" id="mc" name="question2" value="New Years Day 1800">New Years Day 1800<br><br>
+	 
+  
+ <p>What act was the first to be inducted into both the Country Music and the Rock and Roll Halls of Fame?</p>
+  <input type="radio" id="mc" name="question3" value="Johnny Cash">Johnny Cash<br>
+  <input type="radio" id="mc" name="question3" value="Elvis Presley">Elvis Presley<br>
+  <input type="radio" id="mc" name="question3" value="Lyle Lovett">Lyle Lovett<br>
+  <input type="radio" id="mc" name="question3" value="Hank Williams">Hank Williams<br>
+	 
+<input type="button" id="button" value="Submit" onclick="check()">
+
+</form>
+
+</body>
+</html>

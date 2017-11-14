@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+	<title>Music City Trivia Quiz</title>
+	<script type="text/javascript">
+		
+		//function to check if the user answered all the questions correctly 
+		function check() {
+			var correct = 0; //variable that holds the correct number of answers 
+			var total = 4; //variable that holds the total number of questions in the quiz
+			var river = document.getElementById("Cumberland").value; //variable to check Cumberland river text input
+			var centennial = document.getElementById("centennial").value; //variable to check the Centennial Park text input
+			
+			//checks question 1
+			//if it's correct, it adds +1 to the correct variable
+			if(document.getElementById("1779").checked){
+				correct++;
+			}
+			
+			//checks question2
+			if(document.getElementById("Cash").checked){
+				correct++;
+			}
+			
+			//checks question 3 
+			if(river == "Cumberland") {
+				correct++;
+			} 
+			
+			//checks question 3 if user inputs different spelling but same answer
+			else if(river == "Cumberland River"){
+				correct++;
+			}
+			
+			//checks question 4
+			if(centennial == "Centennial") {
+				correct++;
+				alert("You answered " + correct + " correct out of " + total);
+			} 
+			
+			//checks question 4 if user inputs different spelling but same answer
+			else if(centennial == "Centennial Park"){
+				correct++;
+				alert("You answered " + correct + " correct out of " + total);
+			}
+			
+			//alerts results to the user
+			else{
+				alert("You answered " + correct + " correct out of " + total);
+			}
+	}
+	</script>
+</head>
+<body>
+
+<!--Questions 1-4 displayed in a form-->
+ <form name="quiz"> 
+ What year was Nashville founded?<br>
+ <input type="radio" name="founded" id="1815">1815<br>
+ <input type="radio" name="founded" id="1779">Christmas Eve 1779<br>
+ <input type="radio" name="founded" id="1720">1720<br>
+ <input type="radio" name="founded" id="1800">New Years Day 1800<br><br>
+  
+ What act was the first to be inducted into both the Country Music and the Rock and Roll Halls of Fame?<br>
+ <input type="radio" name="inducted" id="Cash">Johnny Cash<br>
+ <input type="radio" name="inducted" id="Presley">Elvis Presley<br>
+ <input type="radio" name="inducted" id="Lovett">Lyle Lovett<br>
+ <input type="radio" name="inducted" id="Williams">Hank Williams<br><br>
+
+<!--textbox question-->
+What river runs through Nashville?<br>
+ <input type="text" id="Cumberland"><br><br> 
+	 
+<!--textbox question-->
+Which park in Nashville hosts the only replica of the Greek Parthenon?<br>
+ <input type="text" id="centennial"><br><br>
+ 
+</form>
+	
+
+<button onclick="check()">Submit</button>
+
+</body>
+</html>
