@@ -2,9 +2,238 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Untitled Document</title>
+<title>Performance Quiz 3</title>
+
+<script type="text/javascript">
+	
+	function writetostatus()
+	{
+		window.status = myOnLoadFunction
+		return true 
+	}
+	
+</script>
+	
+<style>
+	tr [colspan="1"] {
+    text-align: center;
+}
+	tr [colspan="2"] {
+    text-align: center;
+}
+	tr [colspan="3"] {
+    text-align: center;
+}
+
+</style>
 </head>
 
 <body>
+	<!--setting up the airline seats in a form -->
+	<!--formatted in the table tag -->
+	<form name="airplane">
+		
+		<table border="0">
+			<tr>
+				<td>
+					
+				</td>
+				<td colspan="2">
+					<img name="img1" src="Alarge.png" alt="A" border="0" width=".8" height=".8" onclick="alert(myDescriptions[4])" />
+				</td>
+				<td>
+					
+				</td>
+				<td colspan="3">
+					<img name="img2" src="Blarge.png" alt="B" border="0" width=".8" height=".8" onclick="alert(myDescriptions[4])" />
+				</td>
+				<td>
+					
+				</td>
+				<td colspan="2">
+					<img name="img3" src="Clarge.png" alt="C" border="0" width=".8" height=".8" onclick="alert(myDescriptions[4])" />
+				</td>
+				<td>
+				
+				</td>
+			</tr>
+			<tr>
+				<td>
+					1
+				</td>
+				<td colspan="2">
+					<img name="img4" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+				</td>
+				<td>
+					
+				</td>
+				<td colspan="3">
+					<img name="img5" src="Largeclosed.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+				</td>
+				<td>
+				
+				</td>
+				<td colspan="2">
+					<img name="img6" src="Largeclosed.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					2
+				</td>
+				<td colspan="2">
+					<img name="img7" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+				</td>
+				<td>
+					
+				</td>
+				<td colspan="3">
+					<img name="img8" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+				</td>
+				<td>
+				
+				</td>
+				<td colspan="2">
+					<img name="img9" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					3
+				</td>
+				<td colspan="2">
+					<img name="img10" src="Largeclosed.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+				</td>
+				<td>
+					
+				</td>
+				<td colspan="3">
+					<img name="img11" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+				</td>
+				<td>
+				
+				</td>
+				<td colspan="2">
+					<img name="img12" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+				</td>
+			</tr>
+			<tr>
+			
+			</tr>
+			<tr>
+				<td>
+					4
+				</td>
+				<td colspan="1">
+					<img name="img13" src="open.png" alt="Small seat" width=".5" height=".5" 
+						 onclick="alert(myDescriptions[1])" />
+				</td>
+				<td colspan="1">
+					<img name="img14" src="open.png" alt="Small seat" width=".5" height=".5" 
+						 onclick="alert(myDescriptions[1])" />
+				</td>
+				<td>
+					
+				</td>
+				<td colspan="1">
+					<img name="img15" src="open.png" alt="Small seat" width=".5" height=".5" 
+						 onclick="alert(myDescriptions[1])" />
+				</td>
+				<td colspan="1">
+					<img name="img16" src="open.png" alt="Small seat" width=".5" height=".5" 
+						 onclick="alert(myDescriptions[1])" />
+				</td>
+				<td colspan="1">
+					<img name="img17" src="open.png" alt="Small seat" width=".5" height=".5" 
+						 onclick="alert(myDescriptions[1])" />
+				</td>
+				<td>
+				
+				</td>
+				<td colspan="1">
+					<img name="img18" src="open.png" alt="Small seat" width=".5" height=".5" 
+						 onclick="alert(myDescriptions[1])" />
+				</td>
+				<td colspan="1">
+					<img name="img18" src="open.png" alt="Small seat" width=".5" height=".5" 
+						 onclick="alert(myDescriptions[1])" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					5
+				</td>
+				<td colspan="1">
+					<img name="img19" src="open.png" alt="Small seat" width=".5" height=".5" 
+						 onclick="alert(myDescriptions[1])" />
+				</td>
+				<td colspan="1">
+					<img name="img20" src="open.png" alt="Small seat" width=".5" height=".5" 
+						 onclick="alert(myDescriptions[1])" />
+				</td>
+				<td>
+					
+				</td>
+				<td colspan="1">
+					<img name="img21" src="closed.png" alt="Small seat" width=".5" height=".5" 
+						 onclick="alert(myDescriptions[1])" />
+				</td>
+				<td colspan="1">
+					<img name="img22" src="closed.png" alt="Small seat" width=".5" height=".5" 
+						 onclick="alert(myDescriptions[1])" />
+				</td>
+				<td colspan="1">
+					<img name="img23" src="closed.png" alt="Small seat" width=".5" height=".5" 
+						 onclick="alert(myDescriptions[1])" />
+				</td>
+				<td>
+				
+				</td>
+				<td colspan="1">
+					<img name="img24" src="open.png" alt="Small seat" width=".5" height=".5" 
+						 onclick="alert(myDescriptions[1])" />
+				</td>
+				<td colspan="1">
+					<img name="img25" src="open.png" alt="Small seat" width=".5" height=".5" 
+						 onclick="alert(myDescriptions[1])" />
+				</td>
+			</tr>
+		</table>
+
+	</form>
+	
+	
+</body>
+
+	
+	
+	
+	
+	
+	
+<body>
+	
+<script type="text/javascript">
+
+// Arrays that hold my images and descriptions
+	//var myImages = new Array("img0.jpg", "img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg", "img5.jpg", "img6.jpg", 
+						 "img7.jpg", "img8.jpg", "img9.jpg");
+	//var myDescriptions = new Array ("Labrador Retriever", "German Shepherd", "Golden Retriever", "Bulldog", "Beagle", 
+							   "Boxer", "German Shorthaired Pointer", "Siberian Husky", "Australian Shepherd", 
+								"English Springer Spaniel");
+</script>
+
+		
+	<img name="img0" src="open.png" border="0" width=".5" height=".5" onclick="alert(myDescriptions[0])" />
+	<img name="img1" src="Largeopen.png" border="0" width=" " height=" " onclick="alert(myDescriptions[1])" />
+	<img name="img2" src="closed.png" border="0" width=".5" height=".5" onclick="alert(myDescriptions[2])" />
+	<img name="img3" src="Largeclosed.png" border="0" width=".8" height=".8" onclick="alert(myDescriptions[3])" />
+	<img name="img4" src="Alarge.png" border="0" width=".5" height=".5" onclick="alert(myDescriptions[4])" />
+	<img name="img5" src="Dsmall.png" border="0" width=".5" height=".5" onclick="alert(myDescriptions[5])" />
+	<img name="img6" src="img6.jpg" border="0" width="200" height="150" onclick="alert(myDescriptions[6])" />
+	<img name="img7" src="img7.jpg" border="0" width="200" height="150" onclick="alert(myDescriptions[7])" />
+	<img name="img8" src="img8.jpg" border="0" width="200" height="150" onclick="alert(myDescriptions[8])" />
+	<img name="img9" src="img9.jpg" border="0" width="200" height="150" onclick="alert(myDescriptions[9])" />
+	
 </body>
 </html>
