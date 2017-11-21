@@ -52,10 +52,93 @@
 				alert("You answered " + correct + " correct out of " + total);
 			}
 	}
+		
+		function enterTime(){
+			if(document.form1.time.options[0].selected == true)
+				{
+					alert("1 minute begins now");
+					setTimeout("alert('Times Up!')",60000);
+				}
+			if(document.form1.time.options[1].selected == true)
+				{
+					alert("2 minutes begins now");
+					setTimeout("alert('Times Up!')",120000);
+				}
+			if(document.form1.time.options[2].selected == true)
+				{
+					alert("5 minutes begins now");
+					setTimeout("alert('Times Up!')",300000);
+				}
+			if(document.form1.time.options[3].selected == true)
+				{
+					alert("No time limit. Click to begin");
+				}
+			
+			
+		}
+		
+		function questionSelected(){
+			if(document.form2.questions.options[0].selected == true)
+				{
+					alert("1 question selected");
+					return (document.quiz.founded);
+				}
+			if(document.form2.questions.options[1].selected == true)
+				{
+					alert("2 questions selected");
+				}
+			if(document.form2.questions.options[2].selected == true)
+				{
+					alert("3 questions selected");
+				}
+			if(document.form2.questions.options[3].selected == true)
+				{
+					alert("4 questions selected");
+				}
+			
+			
+		}
+	
+		
+		
+		
 	</script>
 </head>
 <body>
 
+<p>Please select a time limit</p>	
+	
+<form action=" " name="form1">	
+<select name="time">
+  <option value="1 minute">1 minute</option>
+  <option value="2 minutes">2 minutes</option>
+  <option value="5 minutes">5 minutes</option>
+  <option value="No time limit">No time limit</option>
+</select><br><br>
+
+<input type="button" value="enter" name="enter" onclick="enterTime()" />
+	
+</form>	<br><br><br>
+	
+<p>Please select the number of questions</p>	
+	
+<form action=" " name="form2">	
+<select name="questions">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+</select><br><br><br>
+
+<input type="button" value="enter" name="enter" onclick="questionSelected()" />
+	
+</form>	<br><br><br>
+		
+	
+	
+	
+	
+	
 <!--Questions 1-4 displayed in a form-->
  <form name="quiz"> 
  What year was Nashville founded?<br>
@@ -79,9 +162,12 @@ Which park in Nashville hosts the only replica of the Greek Parthenon?<br>
  <input type="text" id="centennial"><br><br>
  
 </form>
-	
 
-<button onclick="check()">Submit</button>
+
+
+	
+	
+	
 
 </body>
 </html>
