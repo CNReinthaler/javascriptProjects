@@ -3,11 +3,112 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head> 
-	<title>Trivia Quiz Milestone 5 Menu</title>
+	<title>Music City Trivia Quiz</title>
+	
+	<!-- FUNCTIONS -->
+	<script type="text/javascript"> 
+		
+	//function that starts the quiz
+	function startQuiz() {
+		
+		//holds where the quiz is stored
+		var questionOptions = window.parent.frameRight.document.getElementById('myQUIZ');
+	
+		//displays the questions when the user clicks the button 'Start Quiz'
+		if (questionOptions.style.display === 'none') 
+			{
+				questionOptions.style.display = 'block';
+    		} 
+			//else 
+			{
+      		//	questionOptions.style.display = 'none';
+    		}
+			
+		//TIME LIMIT
+		//checks the timelimit selected 
+		//imposes a times limit if the user wishes to do so
+		if(document.start.time.options[0].selected == true)
+			{
+				alert("1 minute begins now");
+				setTimeout("alert('Times Up!')",60000);
+			}
+		if(document.start.time.options[1].selected == true)
+			{
+				alert("2 minutes begin now");
+				setTimeout("alert('Times Up!')",120000);
+			}
+		if(document.start.time.options[2].selected == true)
+			{
+				alert("5 minutes begin now");
+				setTimeout("alert('Times Up!')",300000);
+			}
+		if(document.start.time.options[3].selected == true)
+			{	
+				alert("No time limit. Click to begin");
+			}
+			
+		
+		//# OF QUESTIONS
+		//checks the number of questions the user desires to answer 
+		//displays the correct number of questions
+		if(document.start.questions.options[0].selected == true)
+			{
+				alert("1 question selected");
+				return (document.quiz.founded);
+			}
+		if(document.start.questions.options[1].selected == true)
+			{
+				alert("2 questions selected");					
+				return (document.quiz.founded && document.quiz.inducted);
+			}
+		if(document.start.questions.options[2].selected == true)
+			{
+				alert("3 questions selected");					
+				return (document.quiz.founded && document.quiz.inducted && document.quiz.Cumberland);
+			}
+		if(document.start.questions.options[3].selected == true)
+			{
+				alert("4 questions selected");
+				return (document.quiz.founded && document.quiz.inducted && document.quiz.Cumberland
+						  && document.quiz.centennial);
+			}
+			
+	}
+</script>
+
+	
+	
 </head>
+
+	
 <body>
 	<h1>Music City Trivia Quiz</h1> 
+	<p>Please select:</p>
 	
+	<!-- 2 options for the user to select before they begin the quiz -->
+	<form action=" " name="start">	
+		<!--user selects time limit-->
+		<select name="time">
+ 			<option value="1 minute">1 minute</option>
+  			<option value="2 minutes">2 minutes</option>
+  			<option value="5 minutes">5 minutes</option>
+  			<option value="No time limit">No time limit</option>
+		</select>
+
+		<!--user selects number of questions they want-->
+		<select name="questions">
+  			<option value="1">1 question</option>
+  			<option value="2">2 questions</option>
+  			<option value="3">3 questions</option>
+  			<option value="4">4 questions</option>
+		</select><br><br>
+	</form>	
+
+<!--START QUIZ button-->
+<button onclick="startQuiz()">Start Quiz</button>	
+	
+
+
 </body>
 </html> 
 	

@@ -1,62 +1,179 @@
-<!doctype html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta charset="UTF-8">
 	<title>Music City Trivia Quiz</title>
 	<script type="text/javascript">
 		
 		//function to check if the user answered all the questions correctly 
-		function check() 
-		{
-			alert(correct);
-			var question1 = document.quiz.question1.value;
-			var question2 = doucment.quiz.question2.value;
-			var question3 = document.quiz.question3.value;
-			var correct = 0;
-			var total = 3;
+		function check() {
+			var correct = 0; //variable that holds the correct number of answers 
+			var total = 4; //variable that holds the total number of questions in the quiz
+			var river = document.getElementById("Cumberland").value; //variable to check Cumberland river text input
+			var centennial = document.getElementById("centennial").value; //variable to check the Centennial Park text input
 			
-			if(question1 == "Cumberland River"){
-				correct = correct + 1;
-			}
-			if(question1.checked == true){
-				correct++
-			}
-			if(document.getElementsByName('question3').checked == true){
-				correct++
+			//checks question 1
+			//if it's correct, it adds +1 to the correct variable
+			if(document.getElementById("1779").checked){
+				correct++;
 			}
 			
-			alert(correct);
+			//checks question2
+			if(document.getElementById("Cash").checked){
+				correct++;
+			}
+			
+			//checks question 3 
+			if(river == "Cumberland") {
+				correct++;
+			} 
+			
+			//checks question 3 if user inputs different spelling but same answer
+			else if(river == "Cumberland River"){
+				correct++;
+			}
+			
+			//checks question 4
+			if(centennial == "Centennial") {
+				correct++;
+				alert("You answered " + correct + " correct out of " + total);
+			} 
+			
+			//checks question 4 if user inputs different spelling but same answer
+			else if(centennial == "Centennial Park"){
+				correct++;
+				alert("You answered " + correct + " correct out of " + total);
+			}
+			
+			//alerts results to the user
+			else{
+				alert("You answered " + correct + " correct out of " + total);
+			}
+	}
 		
+		//function to begin quiz 
+		//submits the time and number of questions specified by the user
+		
+		function enterTime(){
+			if(document.form1.time.options[0].selected == true)
+				{
+					alert("1 minute begins now");
+					setTimeout("alert('Times Up!')",60000);
+				}
+			if(document.form1.time.options[1].selected == true)
+				{
+					alert("2 minutes begins now");
+					setTimeout("alert('Times Up!')",120000);
+				}
+			if(document.form1.time.options[2].selected == true)
+				{
+					alert("5 minutes begins now");
+					setTimeout("alert('Times Up!')",300000);
+				}
+			if(document.form1.time.options[3].selected == true)
+				{
+					alert("No time limit. Click to begin");
+				}
+			
 			
 		}
+		
+		function questionSelected(){
+			if(document.form2.questions.options[0].selected == true)
+				{
+					alert("1 question selected");
+					return (document.quiz.founded);
+				}
+			if(document.form2.questions.options[1].selected == true)
+				{
+					alert("2 questions selected");
+					return (document.quiz.founded && document.quiz.inducted);
+				}
+			if(document.form2.questions.options[2].selected == true)
+				{
+					alert("3 questions selected");
+					return (document.quiz.founded && document.quiz.inducted && document.quiz.Cumberland);
+				}
+			if(document.form2.questions.options[3].selected == true)
+				{
+					alert("4 questions selected");
+					return (document.quiz.founded && document.quiz.inducted && document.quiz.Cumberland
+						   && document.quiz.centennial);
+				}
+			
+			
+		}
+	
+		
 	</script>
 </head>
 <body>
-<h1>Music City Trivia Quiz</h1>
 
-<!--Questions 1-3 displayed in a form-->
- <form id="quiz" name="quiz"> 
-  
-<p>What river runs through Nashville?</p>
-  <input type="text" id="textbox" name="question1">
-	 
-	 
-<p>What year was Nashville founded?</p>
-  <input type="radio" id="mc" name="question2" value="1815" >1815<br>
-  <input type="radio" id="mc" name="question2" value"Christmas Eve 1779">Christmas Eve 1779<br>
-  <input type="radio" id="mc" name="question2" value="1720">1720<br>
-  <input type="radio" id="mc" name="question2" value="New Years Day 1800">New Years Day 1800<br><br>
-	 
-  
- <p>What act was the first to be inducted into both the Country Music and the Rock and Roll Halls of Fame?</p>
-  <input type="radio" id="mc" name="question3" value="Johnny Cash">Johnny Cash<br>
-  <input type="radio" id="mc" name="question3" value="Elvis Presley">Elvis Presley<br>
-  <input type="radio" id="mc" name="question3" value="Lyle Lovett">Lyle Lovett<br>
-  <input type="radio" id="mc" name="question3" value="Hank Williams">Hank Williams<br>
-	 
-<input type="button" id="button" value="Submit" onclick="check()">
+<p>Please select a time limit</p>	
+	
+<form action=" " name="form1">	
+<select name="time">
+  <option value="1 minute">1 minute</option>
+  <option value="2 minutes">2 minutes</option>
+  <option value="5 minutes">5 minutes</option>
+  <option value="No time limit">No time limit</option>
+</select><br>
 
+<input type="button" value="enter" name="enter" onclick="enterTime()" />
+	
+</form>	<br><br><br>
+	
+<p>Please select the number of questions</p>	
+	
+<form action=" " name="form2">	
+<select name="questions">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+</select><br><br><br>
+
+<input type="button" value="enter" name="enter" onclick="questionSelected()" />
+	
+</form>	<br><br><br>
+		
+	
+	
+	
+	
+	
+<!--Questions 1-4 displayed in a form-->
+ <form name="quiz"> 
+ What year was Nashville founded?<br>
+ <input type="radio" name="founded" id="1815">1815<br>
+ <input type="radio" name="founded" id="1779">Christmas Eve 1779<br>
+ <input type="radio" name="founded" id="1720">1720<br>
+ <input type="radio" name="founded" id="1800">New Years Day 1800<br><br>
+  
+ What act was the first to be inducted into both the Country Music and the Rock and Roll Halls of Fame?<br>
+ <input type="radio" name="inducted" id="Cash">Johnny Cash<br>
+ <input type="radio" name="inducted" id="Presley">Elvis Presley<br>
+ <input type="radio" name="inducted" id="Lovett">Lyle Lovett<br>
+ <input type="radio" name="inducted" id="Williams">Hank Williams<br><br>
+
+<!--textbox question-->
+What river runs through Nashville?<br>
+ <input type="text" id="Cumberland"><br><br> 
+	 
+<!--textbox question-->
+Which park in Nashville hosts the only replica of the Greek Parthenon?<br>
+ <input type="text" id="centennial"><br><br>
+ 
 </form>
+
+
+
+	
+	
+<!-- store questions and answers in an array - onclick start button would call a function - this function 
+would say if "this option is selected" disiplay this."
 
 </body>
 </html>
