@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 	<title>Music City Trivia Quiz</title>
 	<script type="text/javascript">
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
 		
 		//function to check if the user answered all the questions correctly 
 		function check() {
@@ -38,13 +39,13 @@
 			//checks question 4
 			if(centennial == "Centennial") {
 				correct++;
-				alert("You answered " + correct + " correct out of " + total);
+				alert("You answered " + correct + " correct!");
 			} 
 			
 			//checks question 4 if user inputs different spelling but same answer
 			else if(centennial == "Centennial Park"){
 				correct++;
-				alert("You answered " + correct + " correct out of " + total);
+				alert("You answered " + correct + " correct!");
 			}
 			
 			//alerts results to the user
@@ -60,10 +61,8 @@
 <body>
 	
 <!--Questions 1-4 displayed in a form-->
- 
-<!--<div id="myQUIZ" style="display:none">	-->
 <form id="myFORM" name="quiz"> 
-	<div id="question1" style="display:none">
+	<div id="question1" style="display:none">     <!-- div tags set hidden until user chooses # of questions they want-->
 		1. What year was Nashville founded?<br>
 		<input type="radio" name="founded" id="1815">1815<br>
  		<input type="radio" name="founded" id="1779">Christmas Eve 1779<br>
@@ -87,11 +86,13 @@
 		4. Which park in Nashville hosts the only replica of the Greek Parthenon?<br>
  		<input type="text" id="centennial"><br><br>
 	</div>
-
+	<div id="btnSubmit" style="display:none">
+		<button id="submit" onclick="check()">Submit</button>	
+	</div>
 </form>
 	
-<button onclick="check()">Submit</button>	
-<!--</div>-->
+
+
 
 
 	

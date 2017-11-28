@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head> 
 	<title>Music City Trivia Quiz</title>
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
 	
 	<!-- FUNCTIONS -->
 	<script type="text/javascript"> 
@@ -17,37 +18,45 @@
 		var secondQuestion = window.parent.frameRight.document.getElementById('question2');
 		var thirdQuestion = window.parent.frameRight.document.getElementById('question3');
 		var fourthQuestion = window.parent.frameRight.document.getElementById('question4');
+		var submit = window.parent.frameRight.document.getElementById('btnSubmit');
 		
 	
 		//# OF QUESTIONS
 		//displays the questions when the user clicks the button 'Start Quiz'
 		 if (questionOptions.style.display === 'none') 
 		 {
+			 //if user selects 1 question
 			 if(document.start.questions.options[0].selected == true)
 				{
-					alert("1 question wassss selected!");
 					questionOptions.style.display = 'block';
+					submit.style.display = 'block';
 				}
+			
+			 //if user selects 2 questions
 			 if(document.start.questions.options[1].selected == true)
 				{
-					alert("2 questions wereeee selected!");
 					questionOptions.style.display = 'block';
 					secondQuestion.style.display = 'block';
+					submit.style.display = 'block';
 				}
-			  if(document.start.questions.options[2].selected == true)
+			 
+			 //if user selects 3 questions
+			 if(document.start.questions.options[2].selected == true)
 				{
-					alert("3 questions wereeee selected!");
 					questionOptions.style.display = 'block';
 					secondQuestion.style.display = 'block';
 					thirdQuestion.style.display = 'block';
+					submit.style.display = 'block';
 				}
-			  if(document.start.questions.options[3].selected == true)
+			  
+			 //if user selects 4 questions
+			 if(document.start.questions.options[3].selected == true)
 				{
-					alert("4 questions wereeee selected!");
 					questionOptions.style.display = 'block';
 					secondQuestion.style.display = 'block';
 					thirdQuestion.style.display = 'block';
 					fourthQuestion.style.display = 'block';
+					submit.style.display = 'block';
 					
 				}
 			 
@@ -57,21 +66,23 @@
 		//TIME LIMIT
 		//checks the timelimit selected 
 		//imposes a times limit if the user wishes to do so
+		
+		//1 min
 		if(document.start.time.options[0].selected == true)
 			{
-				alert("1 minute begins now");
 				setTimeout("alert('Times Up!')",60000);
 			}
+		//2 min
 		if(document.start.time.options[1].selected == true)
 			{
-				alert("2 minutes begin now");
 				setTimeout("alert('Times Up!')",120000);
 			}
+		//5 min
 		if(document.start.time.options[2].selected == true)
 			{
-				alert("5 minutes begin now");
 				setTimeout("alert('Times Up!')",300000);
 			}
+		// No time limit
 		if(document.start.time.options[3].selected == true)
 			{	
 				alert("No time limit. Click to begin");
@@ -109,7 +120,7 @@
 	</form>	
 
 <!--START QUIZ button-->
-<button onclick="startQuiz()">Start Quiz</button>	
+<button id="begin" onclick="startQuiz()">Start Quiz</button>	
 	
 
 

@@ -3,6 +3,33 @@
 <html>
 <head> 
 	<title>Music City Trivia Quiz</title>
+
+	<script type="text/javascript">
+	
+		//Storing information in COOKIES
+		//function used to create a cookie
+		//function setCookie (cookieName, cookieValue, cookiePath, cookieExpires)
+		{
+			cookieValue = escape(cookieValue);
+			if(cookieExpires == " ")
+				{
+					var nowDate = new Date();
+					nowDate.setMonth(nowDate.getMonth() + 6);
+					cookieExpires = nowDate.toGMTString();
+				}
+			if (cookiePath != " ")
+				{
+					cookiePath = ";Path=" + cookiePath;
+				}
+			document.cookie = cookieName + "=" + cookieValue + 
+				";expires=" + cookieExpires + cookiePath;
+		}
+		setCookie("Name", "", "", "");
+		setCookie("Age", "", "", "");
+		setCookie("FirstVisit", "11 November 2017", "", "");
+		alert(document.cookie);
+	
+	</script>
 </head>
 
 <!--sets up the document into different frames within the main frame-->	
