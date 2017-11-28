@@ -61,32 +61,37 @@
 	
 <!--Questions 1-4 displayed in a form-->
  
-<div id="myQUIZ" style="display:none">	
-<form name="quiz"> 
- What year was Nashville founded?<br>
- <input type="radio" name="founded" id="1815">1815<br>
- <input type="radio" name="founded" id="1779">Christmas Eve 1779<br>
- <input type="radio" name="founded" id="1720">1720<br>
- <input type="radio" name="founded" id="1800">New Years Day 1800<br><br>
-  
- What act was the first to be inducted into both the Country Music and the Rock and Roll Halls of Fame?<br>
- <input type="radio" name="inducted" id="Cash">Johnny Cash<br>
- <input type="radio" name="inducted" id="Presley">Elvis Presley<br>
- <input type="radio" name="inducted" id="Lovett">Lyle Lovett<br>
- <input type="radio" name="inducted" id="Williams">Hank Williams<br><br>
+<!--<div id="myQUIZ" style="display:none">	-->
+<form id="myFORM" name="quiz"> 
+	<div id="myQUIZ" style="display:none">
+		What year was Nashville founded?<br>
+		<input type="radio" name="founded" id="1815">1815<br>
+ 		<input type="radio" name="founded" id="1779">Christmas Eve 1779<br>
+ 		<input type="radio" name="founded" id="1720">1720<br>
+ 		<input type="radio" name="founded" id="1800">New Years Day 1800<br><br>
+	</div>
+	<div id="question2" style="display:none">
+		What act was the first to be inducted into both the Country Music and the Rock and Roll Halls of Fame?<br>
+ 		<input type="radio" name="inducted" id="Cash">Johnny Cash<br>
+ 		<input type="radio" name="inducted" id="Presley">Elvis Presley<br>
+ 		<input type="radio" name="inducted" id="Lovett">Lyle Lovett<br>
+		<input type="radio" name="inducted" id="Williams">Hank Williams<br><br>
+	</div>
+	<div id="question3" style="display:none">
+		<!--textbox question-->
+		What river runs through Nashville?<br>
+ 		<input type="text" id="Cumberland"><br><br> 
+	</div>
+	<div id="question4" style="display:none">
+		<!--textbox question-->
+		Which park in Nashville hosts the only replica of the Greek Parthenon?<br>
+ 		<input type="text" id="centennial"><br><br>
+	</div>
 
-<!--textbox question-->
-What river runs through Nashville?<br>
- <input type="text" id="Cumberland"><br><br> 
-	 
-<!--textbox question-->
-Which park in Nashville hosts the only replica of the Greek Parthenon?<br>
- <input type="text" id="centennial"><br><br>
- 
 </form>
 	
 <button onclick="check()">Submit</button>	
-</div>
+<!--</div>-->
 
 
 	

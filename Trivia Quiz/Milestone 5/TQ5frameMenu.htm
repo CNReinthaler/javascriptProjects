@@ -10,20 +10,32 @@
 		
 	//function that starts the quiz
 	function startQuiz() {
-		
+			
+		//DISPLAYS QUESTIONS
 		//holds where the quiz is stored
 		var questionOptions = window.parent.frameRight.document.getElementById('myQUIZ');
 	
 		//displays the questions when the user clicks the button 'Start Quiz'
-		if (questionOptions.style.display === 'none') 
-			{
-				questionOptions.style.display = 'block';
-    		} 
-			//else 
-			{
-      		//	questionOptions.style.display = 'none';
-    		}
+		 if (questionOptions.style.display === 'none') {
+			 if(document.start.questions.options[0].selected == true)
+				{
+					alert("1 question wassss selected!");
+					questionOptions.style.display = 'block';
+					
+					//window.parent.frameRight.document.getElementById('question1').style.display = 'block';
+						
+						//.style.display = 'block';
+				}
+		
+				//questionOptions.style.display = 'block';
+		
+	}
 			
+			
+		
+		
+		
+		
 		//TIME LIMIT
 		//checks the timelimit selected 
 		//imposes a times limit if the user wishes to do so
@@ -72,7 +84,7 @@
 				return (document.quiz.founded && document.quiz.inducted && document.quiz.Cumberland
 						  && document.quiz.centennial);
 			}
-			
+		
 	}
 </script>
 
