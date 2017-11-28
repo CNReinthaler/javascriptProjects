@@ -12,30 +12,48 @@
 	function startQuiz() {
 			
 		//DISPLAYS QUESTIONS
-		//holds where the quiz is stored
-		var questionOptions = window.parent.frameRight.document.getElementById('myQUIZ');
+		//holds where the quiz is stored in the other frame
+		var questionOptions = window.parent.frameRight.document.getElementById('question1');
+		var secondQuestion = window.parent.frameRight.document.getElementById('question2');
+		var thirdQuestion = window.parent.frameRight.document.getElementById('question3');
+		var fourthQuestion = window.parent.frameRight.document.getElementById('question4');
+		
 	
+		//# OF QUESTIONS
 		//displays the questions when the user clicks the button 'Start Quiz'
-		 if (questionOptions.style.display === 'none') {
+		 if (questionOptions.style.display === 'none') 
+		 {
 			 if(document.start.questions.options[0].selected == true)
 				{
 					alert("1 question wassss selected!");
 					questionOptions.style.display = 'block';
-					
-					//window.parent.frameRight.document.getElementById('question1').style.display = 'block';
-						
-						//.style.display = 'block';
 				}
-		
-				//questionOptions.style.display = 'block';
-		
-	}
+			 if(document.start.questions.options[1].selected == true)
+				{
+					alert("2 questions wereeee selected!");
+					questionOptions.style.display = 'block';
+					secondQuestion.style.display = 'block';
+				}
+			  if(document.start.questions.options[2].selected == true)
+				{
+					alert("3 questions wereeee selected!");
+					questionOptions.style.display = 'block';
+					secondQuestion.style.display = 'block';
+					thirdQuestion.style.display = 'block';
+				}
+			  if(document.start.questions.options[3].selected == true)
+				{
+					alert("4 questions wereeee selected!");
+					questionOptions.style.display = 'block';
+					secondQuestion.style.display = 'block';
+					thirdQuestion.style.display = 'block';
+					fourthQuestion.style.display = 'block';
+					
+				}
+			 
+		 }
 			
 			
-		
-		
-		
-		
 		//TIME LIMIT
 		//checks the timelimit selected 
 		//imposes a times limit if the user wishes to do so
@@ -57,32 +75,6 @@
 		if(document.start.time.options[3].selected == true)
 			{	
 				alert("No time limit. Click to begin");
-			}
-			
-		
-		//# OF QUESTIONS
-		//checks the number of questions the user desires to answer 
-		//displays the correct number of questions
-		if(document.start.questions.options[0].selected == true)
-			{
-				alert("1 question selected");
-				return (document.quiz.founded);
-			}
-		if(document.start.questions.options[1].selected == true)
-			{
-				alert("2 questions selected");					
-				return (document.quiz.founded && document.quiz.inducted);
-			}
-		if(document.start.questions.options[2].selected == true)
-			{
-				alert("3 questions selected");					
-				return (document.quiz.founded && document.quiz.inducted && document.quiz.Cumberland);
-			}
-		if(document.start.questions.options[3].selected == true)
-			{
-				alert("4 questions selected");
-				return (document.quiz.founded && document.quiz.inducted && document.quiz.Cumberland
-						  && document.quiz.centennial);
 			}
 		
 	}
