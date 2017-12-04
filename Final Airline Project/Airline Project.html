@@ -3,16 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <title>Airline Final Project</title>
+<link rel="stylesheet" type="text/css" href="Airline Project.css">
+
 
 <script type="text/javascript">
 	
+	//FUNCTIONS
 	function writetostatus()
 	{
 		window.status = myOnLoadFunction
 		return true 
 	}
 	
-</script>
+	var questionOptions = document.getElementById('question1');
+	function hoverMessage()
+	{
+		questionOptions.style.display = 'block';
+	}
+	
+	
+	//ARRAYS
+	var myArray = new Array();
+	myArray[0] = new Array();
+	myArray[0][1] = Seat 2A
+	myArray[0][2]
+	
+	myArray[1] = new Array();
+	myArray[1][0] = Seat 2B
+		
+	myArray[2] = new Array(); 
+	myArray[2][0] = Seat 2C
+	
+</script>	
 	
 <style>
 	tr [colspan="1"] {
@@ -29,6 +51,14 @@
 </head>
 
 <body>
+	
+	<!--DIV TAGS -->
+	<div id="question1" style="display:none">
+		<p>I am a hover message.</p>
+	
+	</div>
+	
+	
 	<!--setting up the airline seats in a form -->
 	<!--formatted in the table tag -->
 	<form name="airplane">
@@ -96,23 +126,31 @@
 			
 			<!--row 1 - 1st class seats-->
 			<tr>
-				<td>
-					<img name="1" src="1.png" alt="1" width=".8" height=".8"  />
+				<td> 
+					<img name="1" src="1.png" alt="1" width=".8" height=".8"
+						 onMouseOver="hoverMessage()" />
 				</td>
 				<td colspan="2">
-					<img name="img4" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+					<div class="tooltip">
+						<img name="1A" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+					 	
+						<span class="tooltiptext">
+	 				 		<h1>Seat 2A</h1>
+	 						<p>This seat is available</p>
+						</span>
+					</div>
 				</td>
 				<td>
 					
 				</td>
 				<td colspan="3">
-					<img name="img5" src="Largeclosed.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+					<img name="1B" src="Largeclosed.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
 				</td>
 				<td>
 				
 				</td>
 				<td colspan="2">
-					<img name="img6" src="Largeclosed.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+					<img name="1C" src="Largeclosed.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
 				</td>
 			</tr>
 			
@@ -122,19 +160,19 @@
 					<img name="2" src="2.png" alt="2" width=".8" height=".8"  />
 				</td>
 				<td colspan="2">
-					<img name="img7" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+					<img name="2A" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
 				</td>
 				<td>
 					
 				</td>
 				<td colspan="3">
-					<img name="img8" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+					<img name="2B" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
 				</td>
 				<td>
 				
 				</td>
 				<td colspan="2">
-					<img name="img9" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+					<img name="2C" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
 				</td>
 			</tr>
 			
@@ -144,19 +182,19 @@
 					<img name="3" src="3.png" alt="3" width=".8" height=".8"  />
 				</td>
 				<td colspan="2">
-					<img name="img10" src="Largeclosed.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+					<img name="3A" src="Largeclosed.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
 				</td>
 				<td>
 					
 				</td>
 				<td colspan="3">
-					<img name="img11" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+					<img name="3B" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
 				</td>
 				<td>
 				
 				</td>
 				<td colspan="2">
-					<img name="img12" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+					<img name="3C" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
 				</td>
 			</tr>
 			
@@ -766,9 +804,7 @@
 			</tr>
 		</table>
 
-	</form>
-	
-	
+	</form>	
 </body>
 
 	
