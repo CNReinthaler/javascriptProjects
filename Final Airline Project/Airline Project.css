@@ -35,3 +35,13 @@
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
+
+tr [colspan="1"] {
+    text-align: center;
+}
+	tr [colspan="2"] {
+    text-align: center;
+}
+	tr [colspan="3"] {
+    text-align: center;
+}

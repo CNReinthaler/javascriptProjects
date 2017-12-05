@@ -9,54 +9,706 @@
 <script type="text/javascript">
 	
 	//FUNCTIONS
-	function writetostatus()
+	function seatInformation()
 	{
-		window.status = myOnLoadFunction
-		return true 
+		alert("hi");
+		alert(mySeats[0][1]);
 	}
-	
-	var questionOptions = document.getElementById('question1');
-	function hoverMessage()
-	{
-		questionOptions.style.display = 'block';
-	}
-	
-	
-	//ARRAYS
-	var myArray = new Array();
-	myArray[0] = new Array();
-	myArray[0][1] = Seat 2A
-	myArray[0][2]
-	
-	myArray[1] = new Array();
-	myArray[1][0] = Seat 2B
-		
-	myArray[2] = new Array(); 
-	myArray[2][0] = Seat 2C
 	
 </script>	
-	
-<style>
-	tr [colspan="1"] {
-    text-align: center;
-}
-	tr [colspan="2"] {
-    text-align: center;
-}
-	tr [colspan="3"] {
-    text-align: center;
-}
-
-</style>
 </head>
+
 
 <body>
 	
-	<!--DIV TAGS -->
-	<div id="question1" style="display:none">
-		<p>I am a hover message.</p>
+<script>
+	//ARRAYS
+	var mySeats = new Array();
+	mySeats[0] = new Array();
 	
-	</div>
+	//ROW 1
+	
+	//seat 1A
+	mySeats[0][1] = "Seat 1A";
+	mySeats[0][2] = "Available: Yes";
+	mySeats[0][3] = "Class: 1st class";
+	mySeats[0][4] = "Location: Window/Aisle";
+	
+	//seat 1B
+	mySeats[1] = new Array();
+	mySeats[1][1] = "Seat 1B";
+	mySeats[1][2] = "Available: No";
+	mySeats[1][3] = "Class: 1st class";
+	mySeats[1][4] = "Location: Center/Aisle";
+
+	//seat 1C
+	mySeats[2] = new Array(); 
+	mySeats[2][1] = "Seat 1C";
+	mySeats[2][2] = "Available: No";
+	mySeats[2][3] = "Class: 1st class";
+	mySeats[2][4] = "Location: Window/Aisle";
+	
+	//ROW 2
+	
+	//seat 2A
+	mySeats[3] = new Array();
+	mySeats[3][1] = "Seat 2A";
+	mySeats[3][2] = "Available: Yes";
+	mySeats[3][3] = "Class: 1st class";
+	mySeats[3][4] = "Location: Window/Aisle";
+	
+	//seat 2B
+	mySeats[4] = new Array();
+	mySeats[4][1] = "Seat 2B";
+	mySeats[4][2] = "Available: Yes";
+	mySeats[4][3] = "Class: 1st class";
+	mySeats[4][4] = "Location: Center/Aisle";
+
+	//seat 2C
+	mySeats[5] = new Array(); 
+	mySeats[5][1] = "Seat 2C";
+	mySeats[5][2] = "Available: Yes";
+	mySeats[5][3] = "Class: 1st class";
+	mySeats[5][4] = "Location: Window/Aisle";
+	
+	//ROW 3
+	
+	//seat 3A
+	mySeats[6] = new Array();
+	mySeats[6][1] = "Seat 3A";
+	mySeats[6][2] = "Available: No";
+	mySeats[6][3] = "Class: 1st class";
+	mySeats[6][4] = "Location: Window/Aisle";
+	
+	//seat 3B
+	mySeats[7] = new Array();
+	mySeats[7][1] = "Seat 3B";
+	mySeats[7][2] = "Available: Yes";
+	mySeats[7][3] = "Class: 1st class";
+	mySeats[7][4] = "Location: Center/Aisle";
+
+	//seat 3C
+	mySeats[8] = new Array(); 
+	mySeats[8][1] = "Seat 3C";
+	mySeats[8][2] = "Available: Yes";
+	mySeats[8][3] = "Class: 1st class";
+	mySeats[8][4] = "Location: Window/Aisle";
+	
+	//ROW 4
+	
+	//seat 4A
+	mySeats[9] = new Array();
+	mySeats[9][1] = "Seat 4A";
+	mySeats[9][2] = "Available: Yes";
+	mySeats[9][3] = "Class: Business class";
+	mySeats[9][4] = "Location: Window";
+	
+	//seat 4B
+	mySeats[10] = new Array();
+	mySeats[10][1] = "Seat 4B";
+	mySeats[10][2] = "Available: Yes";
+	mySeats[10][3] = "Class: Business class";
+	mySeats[10][4] = "Location: Aisle";
+
+	//seat 4C
+	mySeats[11] = new Array(); 
+	mySeats[11][1] = "Seat 4C";
+	mySeats[11][2] = "Available: Yes";
+	mySeats[11][3] = "Class: Business class";
+	mySeats[11][4] = "Location: Aisle";
+	
+	//seat 4D
+	mySeats[12] = new Array(); 
+	mySeats[12][1] = "Seat 4D";
+	mySeats[12][2] = "Available: Yes";
+	mySeats[12][3] = "Class: Business class";
+	mySeats[12][4] = "Location: Center";
+	
+	//seat 4E
+	mySeats[13] = new Array(); 
+	mySeats[13][1] = "Seat 4E";
+	mySeats[13][2] = "Available: Yes";
+	mySeats[13][3] = "Class: Business class";
+	mySeats[13][4] = "Location: Aisle";
+	
+	//seat 4F
+	mySeats[14] = new Array(); 
+	mySeats[14][1] = "Seat 4F";
+	mySeats[14][2] = "Available: Yes";
+	mySeats[14][3] = "Class: Business class";
+	mySeats[14][4] = "Location: Aisle";
+	
+	//seat 4G
+	mySeats[15] = new Array(); 
+	mySeats[15][1] = "Seat 4G";
+	mySeats[15][2] = "Available: Yes";
+	mySeats[15][3] = "Class: Business class";
+	mySeats[15][4] = "Location: Window";
+	
+	//ROW 5
+	
+	//seat 5A
+	mySeats[16] = new Array();
+	mySeats[16][1] = "Seat 5A";
+	mySeats[16][2] = "Available: Yes";
+	mySeats[16][3] = "Class: Business class";
+	mySeats[16][4] = "Location: Window";
+	
+	//seat 5B
+	mySeats[17] = new Array();
+	mySeats[17][1] = "Seat 5B";
+	mySeats[17][2] = "Available: Yes";
+	mySeats[17][3] = "Class: Business class";
+	mySeats[17][4] = "Location: Aisle";
+
+	//seat 5C
+	mySeats[18] = new Array(); 
+	mySeats[18][1] = "Seat 5C";
+	mySeats[18][2] = "Available: No";
+	mySeats[18][3] = "Class: Business class";
+	mySeats[18][4] = "Location: Aisle";
+	
+	//seat 5D
+	mySeats[19] = new Array(); 
+	mySeats[19][1] = "Seat 5D";
+	mySeats[19][2] = "Available: No";
+	mySeats[19][3] = "Class: Business class";
+	mySeats[19][4] = "Location: Center";
+	
+	//seat 5E
+	mySeats[20] = new Array(); 
+	mySeats[20][1] = "Seat 5E";
+	mySeats[20][2] = "Available: No";
+	mySeats[20][3] = "Class: Business class";
+	mySeats[20][4] = "Location: Aisle";
+	
+	//seat 5F
+	mySeats[21] = new Array(); 
+	mySeats[21][1] = "Seat 5F";
+	mySeats[21][2] = "Available: Yes";
+	mySeats[21][3] = "Class: Business class";
+	mySeats[21][4] = "Location: Aisle";
+	
+	//seat 5G
+	mySeats[21] = new Array(); 
+	mySeats[21][1] = "Seat 5G";
+	mySeats[21][2] = "Available: Yes";
+	mySeats[21][3] = "Class: Business class";
+	mySeats[21][4] = "Location: Window";
+	
+	//ROW 6
+	
+	//seat 6A
+	mySeats[22] = new Array();
+	mySeats[22][1] = "Seat 6A";
+	mySeats[22][2] = "Available: Yes";
+	mySeats[22][3] = "Class: Business class";
+	mySeats[22][4] = "Location: Window";
+	
+	//seat 6B
+	mySeats[23] = new Array();
+	mySeats[23][1] = "Seat 6B";
+	mySeats[23][2] = "Available: No";
+	mySeats[23][3] = "Class: Business class";
+	mySeats[23][4] = "Location: Aisle";
+
+	//seat 6C
+	mySeats[24] = new Array(); 
+	mySeats[24][1] = "Seat 6C";
+	mySeats[24][2] = "Available: Yes";
+	mySeats[24][3] = "Class: Business class";
+	mySeats[24][4] = "Location: Aisle";
+	
+	//seat 6D
+	mySeats[25] = new Array(); 
+	mySeats[25][1] = "Seat 6D";
+	mySeats[25][2] = "Available: Yes";
+	mySeats[25][3] = "Class: Business class";
+	mySeats[25][4] = "Location: Center";
+	
+	//seat 6E
+	mySeats[26] = new Array(); 
+	mySeats[26][1] = "Seat 6E";
+	mySeats[26][2] = "Available: Yes";
+	mySeats[26][3] = "Class: Business class";
+	mySeats[26][4] = "Location: Aisle";
+	
+	//seat 6F
+	mySeats[27] = new Array(); 
+	mySeats[27][1] = "Seat 6F";
+	mySeats[27][2] = "Available: Yes";
+	mySeats[27][3] = "Class: Business class";
+	mySeats[27][4] = "Location: Aisle";
+	
+	//seat 6G
+	mySeats[28] = new Array(); 
+	mySeats[28][1] = "Seat 6G";
+	mySeats[28][2] = "Available: Yes";
+	mySeats[28][3] = "Class: Business class";
+	mySeats[28][4] = "Location: Window";
+	
+	//ROW 7
+	
+	//seat 7A
+	mySeats[29] = new Array();
+	mySeats[29][1] = "Seat 7A";
+	mySeats[29][2] = "Available: Yes";
+	mySeats[29][3] = "Class: Business class";
+	mySeats[29][4] = "Location: Window";
+	
+	//seat 7B
+	mySeats[30] = new Array();
+	mySeats[30][1] = "Seat 7B";
+	mySeats[30][2] = "Available: Yes";
+	mySeats[30][3] = "Class: Business class";
+	mySeats[30][4] = "Location: Aisle";
+
+	//seat 7C
+	mySeats[31] = new Array(); 
+	mySeats[31][1] = "Seat 7C";
+	mySeats[31][2] = "Available: No";
+	mySeats[31][3] = "Class: Business class";
+	mySeats[31][4] = "Location: Aisle";
+	
+	//seat 7D
+	mySeats[32] = new Array(); 
+	mySeats[32][1] = "Seat 7D";
+	mySeats[32][2] = "Available: Yes";
+	mySeats[32][3] = "Class: Business class";
+	mySeats[32][4] = "Location: Center";
+	
+	//seat 7E
+	mySeats[33] = new Array(); 
+	mySeats[33][1] = "Seat 7E";
+	mySeats[33][2] = "Available: Yes";
+	mySeats[33][3] = "Class: Business class";
+	mySeats[33][4] = "Location: Aisle";
+	
+	//seat 7F
+	mySeats[34] = new Array(); 
+	mySeats[34][1] = "Seat 7F";
+	mySeats[34][2] = "Available: Yes";
+	mySeats[34][3] = "Class: Business class";
+	mySeats[34][4] = "Location: Aisle";
+	
+	//seat 7G
+	mySeats[35] = new Array(); 
+	mySeats[35][1] = "Seat 7G";
+	mySeats[35][2] = "Available: Yes";
+	mySeats[35][3] = "Class: Business class";
+	mySeats[35][4] = "Location: Window";
+	
+	//ROW 8
+	
+	//seat 8A
+	mySeats[36] = new Array();
+	mySeats[36][1] = "Seat 8A";
+	mySeats[36][2] = "Available: Yes";
+	mySeats[36][3] = "Class: Business class";
+	mySeats[36][4] = "Location: Window";
+	
+	//seat 8B
+	mySeats[37] = new Array();
+	mySeats[37][1] = "Seat 8B";
+	mySeats[37][2] = "Available: Yes";
+	mySeats[37][3] = "Class: Business class";
+	mySeats[37][4] = "Location: Aisle";
+
+	//seat 8C
+	mySeats[38] = new Array(); 
+	mySeats[38][1] = "Seat 8C";
+	mySeats[38][2] = "Available: Yes";
+	mySeats[38][3] = "Class: Business class";
+	mySeats[38][4] = "Location: Aisle";
+	
+	//seat 8D
+	mySeats[39] = new Array(); 
+	mySeats[39][1] = "Seat 8D";
+	mySeats[39][2] = "Available: Yes";
+	mySeats[39][3] = "Class: Business class";
+	mySeats[39][4] = "Location: Center";
+	
+	//seat 8E
+	mySeats[40] = new Array(); 
+	mySeats[40][1] = "Seat 8E";
+	mySeats[40][2] = "Available: Yes";
+	mySeats[40][3] = "Class: Business class";
+	mySeats[40][4] = "Location: Aisle";
+	
+	//seat 8F
+	mySeats[41] = new Array(); 
+	mySeats[41][1] = "Seat 8F";
+	mySeats[41][2] = "Available: Yes";
+	mySeats[41][3] = "Class: Business class";
+	mySeats[41][4] = "Location: Aisle";
+	
+	//seat 8G
+	mySeats[42] = new Array(); 
+	mySeats[42][1] = "Seat 8G";
+	mySeats[42][2] = "Available: Yes";
+	mySeats[42][3] = "Class: Business class";
+	mySeats[42][4] = "Location: Window";
+	
+	//ROW 9
+	
+	//seat 9A
+	mySeats[43] = new Array();
+	mySeats[43][1] = "Seat 9A";
+	mySeats[43][2] = "Available: Yes";
+	mySeats[43][3] = "Class: Economy class";
+	mySeats[43][4] = "Location: Window";
+	
+	//seat 9B
+	mySeats[44] = new Array();
+	mySeats[44][1] = "Seat 9B";
+	mySeats[44][2] = "Available: Yes";
+	mySeats[44][3] = "Class: Economy class";
+	mySeats[44][4] = "Location: Aisle";
+
+	//seat 9C
+	mySeats[45] = new Array(); 
+	mySeats[45][1] = "Seat 9C";
+	mySeats[45][2] = "Available: Yes";
+	mySeats[45][3] = "Class: Economy class";
+	mySeats[45][4] = "Location: Aisle";
+	
+	//seat 9D
+	mySeats[46] = new Array(); 
+	mySeats[46][1] = "Seat 9D";
+	mySeats[46][2] = "Available: No";
+	mySeats[46][3] = "Class: Economy class";
+	mySeats[46][4] = "Location: Center";
+	
+	//seat 9E
+	mySeats[47] = new Array(); 
+	mySeats[47][1] = "Seat 9E";
+	mySeats[47][2] = "Available: Yes";
+	mySeats[47][3] = "Class: Economy class";
+	mySeats[47][4] = "Location: Aisle";
+	
+	//seat 9F
+	mySeats[48] = new Array(); 
+	mySeats[48][1] = "Seat 9F";
+	mySeats[48][2] = "Available: Yes";
+	mySeats[48][3] = "Class: Economy class";
+	mySeats[48][4] = "Location: Aisle";
+	
+	//seat 9G
+	mySeats[49] = new Array(); 
+	mySeats[49][1] = "Seat 9G";
+	mySeats[49][2] = "Available: Yes";
+	mySeats[49][3] = "Class: Economy class";
+	mySeats[49][4] = "Location: Window";
+	
+	//ROW 10
+	
+	//seat 10A
+	mySeats[50] = new Array();
+	mySeats[50][1] = "Seat 10A";
+	mySeats[50][2] = "Available: No";
+	mySeats[50][3] = "Class: Economy class";
+	mySeats[50][4] = "Location: Window";
+	
+	//seat 10B
+	mySeats[51] = new Array();
+	mySeats[51][1] = "Seat 10B";
+	mySeats[51][2] = "Available: No";
+	mySeats[51][3] = "Class: Economy class";
+	mySeats[51][4] = "Location: Aisle";
+
+	//seat 10C
+	mySeats[52] = new Array(); 
+	mySeats[52][1] = "Seat 10C";
+	mySeats[52][2] = "Available: Yes";
+	mySeats[52][3] = "Class: Economy class";
+	mySeats[52][4] = "Location: Aisle";
+	
+	//seat 10D
+	mySeats[53] = new Array(); 
+	mySeats[53][1] = "Seat 10D";
+	mySeats[53][2] = "Available: Yes";
+	mySeats[53][3] = "Class: Economy class";
+	mySeats[53][4] = "Location: Center";
+	
+	//seat 10E
+	mySeats[54] = new Array(); 
+	mySeats[54][1] = "Seat 10E";
+	mySeats[54][2] = "Available: Yes";
+	mySeats[54][3] = "Class: Economy class";
+	mySeats[54][4] = "Location: Aisle";
+	
+	//seat 10F
+	mySeats[55] = new Array(); 
+	mySeats[55][1] = "Seat 10F";
+	mySeats[55][2] = "Available: Yes";
+	mySeats[55][3] = "Class: Economy class";
+	mySeats[55][4] = "Location: Aisle";
+	
+	//seat 10G
+	mySeats[56] = new Array(); 
+	mySeats[56][1] = "Seat 10G";
+	mySeats[56][2] = "Available: Yes";
+	mySeats[56][3] = "Class: Economy class";
+	mySeats[56][4] = "Location: Window";
+	
+	//ROW 11
+	
+	//seat 11A
+	mySeats[57] = new Array();
+	mySeats[57][1] = "Seat 11A";
+	mySeats[57][2] = "Available: Yes";
+	mySeats[57][3] = "Class: Economy class";
+	mySeats[57][4] = "Location: Window";
+	
+	//seat 11B
+	mySeats[58] = new Array();
+	mySeats[58][1] = "Seat 11B";
+	mySeats[58][2] = "Available: Yes";
+	mySeats[58][3] = "Class: Economy class";
+	mySeats[58][4] = "Location: Aisle";
+
+	//seat 11C
+	mySeats[59] = new Array(); 
+	mySeats[59][1] = "Seat 11C";
+	mySeats[59][2] = "Available: Yes";
+	mySeats[59][3] = "Class: Economy class";
+	mySeats[59][4] = "Location: Aisle";
+	
+	//seat 11D
+	mySeats[60] = new Array(); 
+	mySeats[60][1] = "Seat 11D";
+	mySeats[60][2] = "Available: Yes";
+	mySeats[60][3] = "Class: Economy class";
+	mySeats[60][4] = "Location: Center";
+	
+	//seat 11E
+	mySeats[61] = new Array(); 
+	mySeats[61][1] = "Seat 11E";
+	mySeats[61][2] = "Available: Yes";
+	mySeats[61][3] = "Class: Economy class";
+	mySeats[61][4] = "Location: Aisle";
+	
+	//seat 11F
+	mySeats[62] = new Array(); 
+	mySeats[62][1] = "Seat 11F";
+	mySeats[62][2] = "Available: No";
+	mySeats[62][3] = "Class: Economy class";
+	mySeats[62][4] = "Location: Aisle";
+	
+	//seat 11G
+	mySeats[63] = new Array(); 
+	mySeats[63][1] = "Seat 11G";
+	mySeats[63][2] = "Available: Yes";
+	mySeats[63][3] = "Class: Economy class";
+	mySeats[63][4] = "Location: Window";
+	
+	//ROW 12
+	
+	//seat 12A
+	mySeats[64] = new Array();
+	mySeats[64][1] = "Seat 12A";
+	mySeats[64][2] = "Available: Yes";
+	mySeats[64][3] = "Class: Economy class";
+	mySeats[64][4] = "Location: Window";
+	
+	//seat 12B
+	mySeats[65] = new Array();
+	mySeats[65][1] = "Seat 12B";
+	mySeats[65][2] = "Available: Yes";
+	mySeats[65][3] = "Class: Economy class";
+	mySeats[65][4] = "Location: Aisle";
+
+	//seat 12C
+	mySeats[66] = new Array(); 
+	mySeats[66][1] = "Seat 12C";
+	mySeats[66][2] = "Available: Yes";
+	mySeats[66] = "Class: Economy class";
+	mySeats[66][4] = "Location: Aisle";
+	
+	//seat 12D
+	mySeats[67] = new Array(); 
+	mySeats[67][1] = "Seat 12D";
+	mySeats[67][2] = "Available: Yes";
+	mySeats[67][3] = "Class: Economy class";
+	mySeats[67][4] = "Location: Center";
+	
+	//seat 12E
+	mySeats[68] = new Array(); 
+	mySeats[68][1] = "Seat 12E";
+	mySeats[68][2] = "Available: Yes";
+	mySeats[68][3] = "Class: Economy class";
+	mySeats[68][4] = "Location: Aisle";
+	
+	//seat 12F
+	mySeats[69] = new Array(); 
+	mySeats[69][1] = "Seat 12F";
+	mySeats[69][2] = "Available: Yes";
+	mySeats[69][3] = "Class: Economy class";
+	mySeats[69][4] = "Location: Aisle";
+	
+	//seat 12G
+	mySeats[70] = new Array(); 
+	mySeats[70][1] = "Seat 12G";
+	mySeats[70][2] = "Available: Yes";
+	mySeats[70][3] = "Class: Economy class";
+	mySeats[70][4] = "Location: Window";
+	
+	//ROW 13
+	
+	//seat 13A
+	mySeats[71] = new Array();
+	mySeats[71][1] = "Seat 13A";
+	mySeats[71][2] = "Available: No";
+	mySeats[71][3] = "Class: Economy class";
+	mySeats[71][4] = "Location: Window";
+	
+	//seat 13B
+	mySeats[72] = new Array();
+	mySeats[72][1] = "Seat 13B";
+	mySeats[72][2] = "Available: No";
+	mySeats[72][3] = "Class: Economy class";
+	mySeats[72][4] = "Location: Aisle";
+
+	//seat 13C
+	mySeats[73] = new Array(); 
+	mySeats[73][1] = "Seat 13C";
+	mySeats[73][2] = "Available: Yes";
+	mySeats[73] = "Class: Economy class";
+	mySeats[73][4] = "Location: Aisle";
+	
+	//seat 13D
+	mySeats[74] = new Array(); 
+	mySeats[74][1] = "Seat 13D";
+	mySeats[74][2] = "Available: Yes";
+	mySeats[74][3] = "Class: Economy class";
+	mySeats[74][4] = "Location: Center";
+	
+	//seat 13E
+	mySeats[75] = new Array(); 
+	mySeats[75][1] = "Seat 13E";
+	mySeats[75][2] = "Available: Yes";
+	mySeats[75][3] = "Class: Economy class";
+	mySeats[75][4] = "Location: Aisle";
+	
+	//seat 13F
+	mySeats[76] = new Array(); 
+	mySeats[76][1] = "Seat 13F";
+	mySeats[76][2] = "Available: Yes";
+	mySeats[76][3] = "Class: Economy class";
+	mySeats[76][4] = "Location: Aisle";
+	
+	//seat 13G
+	mySeats[77] = new Array(); 
+	mySeats[77][1] = "Seat 13G";
+	mySeats[77][2] = "Available: Yes";
+	mySeats[77][3] = "Class: Economy class";
+	mySeats[77][4] = "Location: Window";
+	
+	//ROW 14
+	
+	//seat 14A
+	mySeats[78] = new Array();
+	mySeats[78][1] = "Seat 14A";
+	mySeats[78][2] = "Available: Yes";
+	mySeats[78][3] = "Class: Economy class";
+	mySeats[78][4] = "Location: Window";
+	
+	//seat 14B
+	mySeats[79] = new Array();
+	mySeats[79][1] = "Seat 14B";
+	mySeats[79][2] = "Available: Yes";
+	mySeats[79][3] = "Class: Economy class";
+	mySeats[79][4] = "Location: Aisle";
+
+	//seat 14C
+	mySeats[80] = new Array(); 
+	mySeats[80][1] = "Seat 14C";
+	mySeats[80][2] = "Available: Yes";
+	mySeats[80] = "Class: Economy class";
+	mySeats[80][4] = "Location: Aisle";
+	
+	//seat 14D
+	mySeats[81] = new Array(); 
+	mySeats[81][1] = "Seat 14D";
+	mySeats[81][2] = "Available: Yes";
+	mySeats[81][3] = "Class: Economy class";
+	mySeats[81][4] = "Location: Center";
+	
+	//seat 14E
+	mySeats[82] = new Array(); 
+	mySeats[82][1] = "Seat 14E";
+	mySeats[82][2] = "Available: Yes";
+	mySeats[82][3] = "Class: Economy class";
+	mySeats[82][4] = "Location: Aisle";
+	
+	//seat 14F
+	mySeats[83] = new Array(); 
+	mySeats[83][1] = "Seat 14F";
+	mySeats[83][2] = "Available: Yes";
+	mySeats[83][3] = "Class: Economy class";
+	mySeats[83][4] = "Location: Aisle";
+	
+	//seat 14G
+	mySeats[84] = new Array(); 
+	mySeats[84][1] = "Seat 14G";
+	mySeats[84][2] = "Available: Yes";
+	mySeats[84][3] = "Class: Economy class";
+	mySeats[84][4] = "Location: Window";
+	
+	//ROW 15
+	
+	//seat 15A
+	mySeats[85] = new Array();
+	mySeats[85][1] = "Seat 15A";
+	mySeats[85][2] = "Available: Yes";
+	mySeats[85][3] = "Class: Economy class";
+	mySeats[85][4] = "Location: Window";
+	
+	//seat 15B
+	mySeats[86] = new Array();
+	mySeats[86][1] = "Seat 15B";
+	mySeats[86][2] = "Available: Yes";
+	mySeats[86][3] = "Class: Economy class";
+	mySeats[86][4] = "Location: Aisle";
+
+	//seat 15C
+	mySeats[87] = new Array(); 
+	mySeats[87][1] = "Seat 15C";
+	mySeats[87][2] = "Available: Yes";
+	mySeats[87] = "Class: Economy class";
+	mySeats[87][4] = "Location: Aisle";
+	
+	//seat 15D
+	mySeats[88] = new Array(); 
+	mySeats[88][1] = "Seat 15D";
+	mySeats[88][2] = "Available: Yes";
+	mySeats[88][3] = "Class: Economy class";
+	mySeats[88][4] = "Location: Center";
+	
+	//seat 15E
+	mySeats[89] = new Array(); 
+	mySeats[89][1] = "Seat 15E";
+	mySeats[89][2] = "Available: Yes";
+	mySeats[89][3] = "Class: Economy class";
+	mySeats[89][4] = "Location: Aisle";
+	
+	//seat 15F
+	mySeats[90] = new Array(); 
+	mySeats[90][1] = "Seat 15F";
+	mySeats[90][2] = "Available: No";
+	mySeats[90][3] = "Class: Economy class";
+	mySeats[90][4] = "Location: Aisle";
+	
+	//seat 15G
+	mySeats[91] = new Array(); 
+	mySeats[91][1] = "Seat 15G";
+	mySeats[91][2] = "Available: No";
+	mySeats[91][3] = "Class: Economy class";
+	mySeats[91][4] = "Location: Window";
+	
+	
+</script>			
+	
 	
 	
 	<!--setting up the airline seats in a form -->
@@ -132,25 +784,37 @@
 				</td>
 				<td colspan="2">
 					<div class="tooltip">
-						<img name="1A" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
-					 	
-						<span class="tooltiptext">
-	 				 		<h1>Seat 2A</h1>
+						<img name="1A" src="Largeopen.png" alt="Large seat" width=".8" height=".8" 
+							 onclick="seatInformation()"/>
+					 <span class="tooltiptext">
+	 				 		<h1>Seat 1A</h1>
 	 						<p>This seat is available</p>
-						</span>
+					</span>
 					</div>
 				</td>
 				<td>
 					
 				</td>
 				<td colspan="3">
-					<img name="1B" src="Largeclosed.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+					<div class="tooltip">
+						<img name="1B" src="Largeclosed.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+					<span class="tooltiptext">
+	 				 		<h1>Seat 1B</h1>
+	 						<p>This seat is not available</p>
+					</span>
+					</div>
 				</td>
 				<td>
 				
 				</td>
 				<td colspan="2">
-					<img name="1C" src="Largeclosed.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+					<div class="tooltip">
+						<img name="1C" src="Largeclosed.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+					<span class="tooltiptext">
+	 				 		<h1>Seat 1C</h1>
+	 						<p>This seat is not available</p>
+					</span>
+					</div>
 				</td>
 			</tr>
 			
@@ -805,6 +1469,16 @@
 		</table>
 
 	</form>	
+
+
+	
+	
+
+	
+	
+	
+	
+	
 </body>
 
 	
