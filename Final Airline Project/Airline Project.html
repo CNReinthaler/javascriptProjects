@@ -11,8 +11,8 @@
 	//FUNCTIONS
 	function seatInformation()
 	{
-		alert("hi");
-		alert(mySeats[0][1]);
+		document.getElementById('airplane').style.display = 'none';
+		document.getElementById('personalInfo').style.display = 'block';
 	}
 	
 </script>	
@@ -710,6 +710,8 @@
 </script>			
 	
 	
+	<!--putting the airplane interface in a div tag -->
+	<div id="airplane">
 	
 	<!--setting up the airline seats in a form -->
 	<!--formatted in the table tag -->
@@ -815,6 +817,12 @@
 	 						<p>This seat is not available</p>
 					</span>
 					</div>
+				</td>
+				<td>
+					&nbsp; &nbsp; &nbsp; &nbsp; 
+				</td>
+				<td rowspan="3">
+					<img name="1stclass" src="1stclass.png" alt="1st Class" width=".8" height=".8" /> 
 				</td>
 			</tr>
 			
@@ -1469,36 +1477,152 @@
 		</table>
 
 	</form>	
+</div>		
 
 
 	
-	
-
+	<!--Form the displays when user clicks on a seat -->
+	<div id="personalInfo" style="display:none">
+	<form name="personalInfo">
+		
+		<table border="0">
+			<tr>
+				<h2>Personal Information</h2>
+			</tr>
+			<tr>
+				<td>
+					<p>First Name:</p>
+				</td>
+				<td>
+					<input type="text" name="firstname"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>Last Name:</p>
+				</td>
+				<td>
+					<input type="text" name="lastname"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>Address Line 1:</p>
+				</td>
+				<td>
+					<input type="text" name="addressline1"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>City:</p>
+				</td>
+				<td>
+					<input type="text" name="city"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>Country:</p>
+				</td>
+				<td>
+					<input type="text" name="country"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>State/Region:</p>
+				</td>
+				<td>
+					<input type="text" name="state"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>Zip/Postal Code:</p>
+				</td>
+				<td>
+					<input type="text" name="zip"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>Email:</p>
+				</td>
+				<td>
+					<input type="text" name="email"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>Primary Phone:</p>
+				</td>
+				<td>
+					<input type="text" name="phone"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h2>Credit Card Information</h2>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>Card number</p>
+					<input type="text" name="cardnumber"/>
+				</td>
+			<tr>
+				<td>
+					<p>Name on card</p>
+					<input type="text" name="nameoncard"/>
+				</td>
+			</tr>
+				
+			</tr>
+			<tr>
+				<td>
+					<p>Expiration date</p>
+					<select name="month">
+   				 		<option value="Jan" selected>01</option>
+    					<option value="Feb">02</option>
+    					<option value="March">03</option>
+    					<option value="April">04</option>
+						<option value="May">05</option>
+						<option value="June">06</option>
+						<option value="July">07</option>
+						<option value="August">08</option>
+						<option value="Sept">09</option>
+						<option value="Oct">10</option>
+						<option value="Nov">11</option>
+						<option value="Dec">12</option>
+  					</select>
+					<select name="year">
+   				 		<option value="2017" selected>2017</option>
+    					<option value="2018">2018</option>
+    					<option value="2019">2019</option>
+    					<option value="2020">2020</option>
+						<option value="2021">2021</option>
+						<option value="2022">2022</option>
+						<option value="2023">2023</option>
+						<option value="2024">2024</option>
+						<option value="2025">2025</option>
+  					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<br><br><button id="Next" onclick="">Next</button>
+				</td>
+			
+			</tr>
+		</table>
+	</form>
+	</div>
 	
 	
 	
 	
 	
 </body>
-
-	
-	
-	
-	
-	
-	
-
-	
-<script type="text/javascript">
-
-// Arrays that hold my images and descriptions
-	//var myImages = new Array("img0.jpg", "img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg", "img5.jpg", "img6.jpg", 
-						 "img7.jpg", "img8.jpg", "img9.jpg");
-	//var myDescriptions = new Array ("Labrador Retriever", "German Shepherd", "Golden Retriever", "Bulldog", "Beagle", 
-							   "Boxer", "German Shorthaired Pointer", "Siberian Husky", "Australian Shepherd", 
-								"English Springer Spaniel");
-</script>
-
-		
 	
 </html>
