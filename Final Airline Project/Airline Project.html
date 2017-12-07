@@ -9,11 +9,25 @@
 <script type="text/javascript">
 	
 	//FUNCTIONS
-	function seatInformation()
+	function displaysSeatInformation()
 	{
 		document.getElementById('airplane').style.display = 'none';
 		document.getElementById('personalInfo').style.display = 'block';
 	}
+	
+	function seatTaken()
+	{
+		alert("This seat is taken. Unavailable for purchase.");
+	}
+	
+	//fucntion that stores user input into an array
+	function storeUserInfo()
+	{
+    	var textInput = document.getElementById('userInput').value;
+    	//var inputInArray = new Array();
+		alert(textInput);
+	}
+ 
 	
 </script>	
 </head>
@@ -707,6 +721,14 @@
 	mySeats[91][4] = "Location: Window";
 	
 	
+	
+	
+	//ARRAYS FOR USER INPUT INTO A FORM
+	var userInformation = new Array();
+	
+	
+	
+	
 </script>			
 	
 	
@@ -787,7 +809,7 @@
 				<td colspan="2">
 					<div class="tooltip">
 						<img name="1A" src="Largeopen.png" alt="Large seat" width=".8" height=".8" 
-							 onclick="seatInformation()"/>
+							 onclick="displaysSeatInformation()"/>
 					 <span class="tooltiptext">
 	 				 		<h1>Seat 1A</h1>
 	 						<p>This seat is available</p>
@@ -800,7 +822,7 @@
 				<td colspan="3">
 					<div class="tooltip">
 						<img name="1B" src="Largeclosed.png" alt="Large seat" width=".8" height=".8" 
-							 onclick="seatInformation()" />
+							 onclick="seatTaken()" />
 					<span class="tooltiptext">
 	 				 		<h1>Seat 1B</h1>
 	 						<p>This seat is not available</p>
@@ -824,7 +846,7 @@
 					&nbsp; &nbsp; &nbsp; &nbsp; 
 				</td>
 				<td rowspan="3">
-					<img name="1stclass" src="1stclass.png" alt="1st Class" width=".8" height=".8" /> 
+					<!--<img name="1stclass" src="1stclass.png" alt="1st Class" width=".8" height=".8" /> -->
 				</td>
 			</tr>
 			
@@ -1483,7 +1505,7 @@
 
 
 	
-	<!--Form the displays when user clicks on a seat -->
+	<!--Form that displays when user clicks on a seat -->
 	<div id="personalInfo" style="display:none">
 	<form name="personalInfo">
 		
@@ -1496,7 +1518,7 @@
 					<p>First Name:</p>
 				</td>
 				<td>
-					<input type="text" name="firstname"/>
+					<input id="userInput" type="text" name="firstname"/>
 				</td>
 			</tr>
 			<tr>
@@ -1613,7 +1635,7 @@
 			</tr>
 			<tr>
 				<td>
-					<br><br><button id="Next" onclick="">Next</button>
+					<br><br><button id="Next" onclick="storeUserInfo()">Next</button>
 				</td>
 			
 			</tr>
