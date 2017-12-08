@@ -23,9 +23,26 @@
 	//fucntion that stores user input into an array
 	function storeUserInfo()
 	{
-    	var textInput = document.getElementById('userInput').value;
-    	//var inputInArray = new Array();
-		alert(textInput);
+    	var textInput = new Array();
+		
+		textInput[0] = document.getElementById('userInput1').value;
+		textInput[1] = document.getElementById('userInput2').value;
+		textInput[2] = document.getElementById('userInput3').value;
+		textInput[3] = document.getElementById('userInput4').value;
+		textInput[4] = document.getElementById('userInput5').value;
+		textInput[5] = document.getElementById('userInput6').value;
+		textInput[6] = document.getElementById('userInput7').value;
+		textInput[7] = document.getElementById('userInput8').value;
+		textInput[8] = document.getElementById('userInput9').value;
+		textInput[9] = document.getElementById('userInput10').value;
+		textInput[10] = document.getElementById('userInput11').value;	
+			
+    	document.write(textInput);
+	}
+	
+	function printOptions() 
+	{
+		window.print();
 	}
  
 	
@@ -1518,7 +1535,7 @@
 					<p>First Name:</p>
 				</td>
 				<td>
-					<input id="userInput" type="text" name="firstname"/>
+					<input id="userInput1" type="text" name="firstname"/>
 				</td>
 			</tr>
 			<tr>
@@ -1526,7 +1543,7 @@
 					<p>Last Name:</p>
 				</td>
 				<td>
-					<input type="text" name="lastname"/>
+					<input id="userInput2" type="text" name="lastname"/>
 				</td>
 			</tr>
 			<tr>
@@ -1534,7 +1551,7 @@
 					<p>Address Line 1:</p>
 				</td>
 				<td>
-					<input type="text" name="addressline1"/>
+					<input id="userInput3" type="text" name="addressline1"/>
 				</td>
 			</tr>
 			<tr>
@@ -1542,7 +1559,7 @@
 					<p>City:</p>
 				</td>
 				<td>
-					<input type="text" name="city"/>
+					<input id="userInput4" type="text" name="city"/>
 				</td>
 			</tr>
 			<tr>
@@ -1550,7 +1567,7 @@
 					<p>Country:</p>
 				</td>
 				<td>
-					<input type="text" name="country"/>
+					<input id="userInput5" type="text" name="country"/>
 				</td>
 			</tr>
 			<tr>
@@ -1558,7 +1575,7 @@
 					<p>State/Region:</p>
 				</td>
 				<td>
-					<input type="text" name="state"/>
+					<input id="userInput6" type="text" name="state"/>
 				</td>
 			</tr>
 			<tr>
@@ -1566,7 +1583,7 @@
 					<p>Zip/Postal Code:</p>
 				</td>
 				<td>
-					<input type="text" name="zip"/>
+					<input id="userInput7" type="text" name="zip"/>
 				</td>
 			</tr>
 			<tr>
@@ -1574,7 +1591,7 @@
 					<p>Email:</p>
 				</td>
 				<td>
-					<input type="text" name="email"/>
+					<input id="userInput8" type="text" name="email"/>
 				</td>
 			</tr>
 			<tr>
@@ -1582,7 +1599,7 @@
 					<p>Primary Phone:</p>
 				</td>
 				<td>
-					<input type="text" name="phone"/>
+					<input id="userInput9" type="text" name="phone"/>
 				</td>
 			</tr>
 			<tr>
@@ -1593,12 +1610,12 @@
 			<tr>
 				<td>
 					<p>Card number</p>
-					<input type="text" name="cardnumber"/>
+					<input id="userInput10" type="text" name="cardnumber"/>
 				</td>
 			<tr>
 				<td>
 					<p>Name on card</p>
-					<input type="text" name="nameoncard"/>
+					<input id="userInput11" type="text" name="nameoncard"/>
 				</td>
 			</tr>
 				
@@ -1644,7 +1661,8 @@
 	</div>
 	
 	
-	
+	<p>Click the button to print the current page.</p>
+	<button onclick="printOptions()">Print this page</button>
 	
 	
 </body>
