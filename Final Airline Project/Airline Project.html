@@ -23,7 +23,7 @@
 	//fucntion that stores user input into an array
 	function storeUserInfo()
 	{
-    	var textInput = new Array();
+		var textInput = new Array();
 		
 		textInput[0] = document.getElementById('userInput1').value;
 		textInput[1] = document.getElementById('userInput2').value;
@@ -35,10 +35,26 @@
 		textInput[7] = document.getElementById('userInput8').value;
 		textInput[8] = document.getElementById('userInput9').value;
 		textInput[9] = document.getElementById('userInput10').value;
-		textInput[10] = document.getElementById('userInput11').value;	
-			
-    	document.write(textInput);
+		textInput[10] = document.getElementById('userInput11').value;
+		textInput[11] = document.getElementById('userInput12').value;
+		textInput[12] = document.getElementById('userInput13').value;
+		
+		
+		document.write("<h2>Flight Information</h2>" + "" 
+				"<h2>Personal Information</h2>" +
+				"<b>Name: </b>&nbsp; &nbsp;" + textInput[0] + " " + textInput[1] + 
+				"<br><br><b>Address: </b>&nbsp; &nbsp;" + textInput[2] + " " + textInput[3] + "," + " " + textInput[5] + "." 
+					   	+ " " + textInput[6] + " " + textInput[4] + 
+				"<br><br><b>Email: </b>&nbsp; &nbsp;" + textInput[7] + 
+				"<br><br><b>Primary Phone: </b>&nbsp; &nbsp;" + textInput[8] + 
+				"<br><br><h2>Credit Card Information</h2>" + "<b>Card number: </b>&nbsp; &nbsp;" + textInput[9] + 
+				"<br><br><b>Name on card: </b>&nbsp; &nbsp;" + textInput[10] + 
+				"<br><br><b>Expiration date: </b>&nbsp; &nbsp;" + textInput[11] + " " + textInput[12]);
+		
+		
+		//document.write()
 	}
+
 	
 	function printOptions() 
 	{
@@ -1623,7 +1639,7 @@
 			<tr>
 				<td>
 					<p>Expiration date</p>
-					<select name="month">
+					<select id="userInput12" name="month">
    				 		<option value="Jan" selected>01</option>
     					<option value="Feb">02</option>
     					<option value="March">03</option>
@@ -1637,7 +1653,7 @@
 						<option value="Nov">11</option>
 						<option value="Dec">12</option>
   					</select>
-					<select name="year">
+					<select id="userInput13" name="year">
    				 		<option value="2017" selected>2017</option>
     					<option value="2018">2018</option>
     					<option value="2019">2019</option>
@@ -1659,10 +1675,10 @@
 		</table>
 	</form>
 	</div>
+
 	
-	
-	<p>Click the button to print the current page.</p>
-	<button onclick="printOptions()">Print this page</button>
+	<!--<p>Click the button to print the current page.</p>
+	<button onclick="printOptions()">Print this page</button>-->
 	
 	
 </body>
