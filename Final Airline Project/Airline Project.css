@@ -8,17 +8,17 @@
 
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 120px;
+    width: 200px;
     background-color: white;
     color: #fff;
     text-align: left;
     border-radius: 6px;
-    padding: 20px 0px;
+    padding: 5px 5px;
     position: absolute;
     z-index: 1;
     top: 150%;
     left: 50%;
-    margin-left: -60px;
+    margin-left: -105px;
 	border-color: black; 
 	border-style: solid;
 }
