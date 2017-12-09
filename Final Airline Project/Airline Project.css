@@ -1,6 +1,19 @@
 @charset "UTF-8";
 /* CSS Document */
 
+table.leftwing {
+    position: relative;
+    float: left;
+}
+table.plane {
+    position: relative;
+    float: left;
+}
+
+table.rightwing {
+    position: relative;
+    float: left;
+}
 
 .price {font-size: 30px;}
 .seat{font-size: 20px;}

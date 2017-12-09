@@ -12,6 +12,7 @@
 	function displaysSeatInformation()
 	{
 		document.getElementById('airplane').style.display = 'none';
+		document.getElementById('rightwing').style.display = 'none';
 		document.getElementById('personalInfo').style.display = 'block';
 	}
 	
@@ -778,11 +779,20 @@
 	<!--putting the airplane interface in a div tag -->
 	<div id="airplane">
 	
+		<table border="0" class="leftwing">
+			<tr>
+			 	<td>
+					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+					<img name="wing" src="wing.png" alt="left wing" width="" height="" />
+				</td>
+			</tr>
+		</table>
+		
 	<!--setting up the airline seats in a form -->
 	<!--formatted in the table tag -->
 	<form name="airplane">
 		
-		<table border="0">
+		<table border="0" frame="vsides" class="plane">
 			<!--EXIT row-->
 			<tr>
 				<td>
@@ -861,7 +871,7 @@
 								<b>Seat 1A</b>
 							</td>
 							<td rowspan="2" class="price">
-								$45
+								$360
 							</td>
 						</tr>
 						<tr>
@@ -885,8 +895,6 @@
 							</td>
 						</tr>
 						</table>
-						 <!--<h1>Seat 1A</h1>
-	 						<p>This seat is available</p>-->
 					</span>
 					</div>
 				</td>
@@ -897,9 +905,38 @@
 					<div class="tooltip">
 						<img name="1B" src="Largeclosed.png" alt="Large seat" width=".8" height=".8" 
 							 onclick="seatTaken()" />
-					<span class="tooltiptext">
-	 				 		<h1>Seat 1B</h1>
-	 						<p>This seat is not available</p>
+					 <span class="tooltiptext">
+	 				 		
+						<table border="0">
+						<tr>
+							<td class="seat">
+								<b>Seat 1B</b>
+							</td>
+							<td rowspan="2" class="price">
+								
+							</td>
+						</tr>
+						<tr>
+							<td>
+
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<hr>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								This seat is not available
+							</td>
+						</tr>
+						<tr>
+							<td>
+								
+							</td>
+						</tr>
+						</table>
 					</span>
 					</div>
 				</td>
@@ -909,10 +946,40 @@
 				<td colspan="2">
 					<div class="tooltip">
 						<img name="1C" src="Largeclosed.png" alt="Large seat" width=".8" height=".8" 
-							 onclick="seatInformation()" />
+							 onclick="seatTaken()" />
+					<!--SEAT TAKEN-->
 					<span class="tooltiptext">
-	 				 		<h1>Seat 1C</h1>
-	 						<p>This seat is not available</p>
+	 				 		
+						<table border="0">
+						<tr>
+							<td class="seat">
+								<b>Seat 1C</b>
+							</td>
+							<td rowspan="2" class="price">
+								
+							</td>
+						</tr>
+						<tr>
+							<td>
+
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<hr>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								This seat is not available
+							</td>
+						</tr>
+						<tr>
+							<td>
+								
+							</td>
+						</tr>
+						</table>
 					</span>
 					</div>
 				</td>
@@ -930,19 +997,20 @@
 					<img name="2" src="2.png" alt="2" width=".8" height=".8"  />
 				</td>
 				<td colspan="2">
-					<img name="2A" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+					<img name="2A" src="Largeopen.png" alt="Large seat" width=".8" height=".8" 
+						 onclick="displaysSeatInformation()" />
 				</td>
 				<td>
 					
 				</td>
 				<td colspan="3">
-					<img name="2B" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+					<img name="2B" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="displaysSeatInformation()" />
 				</td>
 				<td>
 				
 				</td>
 				<td colspan="2">
-					<img name="2C" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+					<img name="2C" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="displaysSeatInformation()" />
 				</td>
 			</tr>
 			
@@ -958,13 +1026,13 @@
 					
 				</td>
 				<td colspan="3">
-					<img name="3B" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+					<img name="3B" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="displaysSeatInformation()" />
 				</td>
 				<td>
 				
 				</td>
 				<td colspan="2">
-					<img name="3C" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="alert(myDescriptions[1])" />
+					<img name="3C" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="displaysSeatInformation()" />
 				</td>
 			</tr>
 			
@@ -1714,6 +1782,8 @@
 			
 			</tr>
 		</table>
+		
+		
 	</form>
 	</div>
 
@@ -1721,7 +1791,10 @@
 	<!--<p>Click the button to print the current page.</p>
 	<button onclick="printOptions()">Print this page</button>-->
 	
-	
+	<div id="rightwing">
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<img class="rightwing" name="rightwing" src="rightwing.png" alt="right wing" width=" " height=" " />	
+	</div>
+
 </body>
-	
 </html>
