@@ -1,6 +1,10 @@
 @charset "UTF-8";
 /* CSS Document */
 
+
+.price {font-size: 30px;}
+.seat{font-size: 20px;}
+
 .tooltip {
     position: relative;
     display: inline-block;
