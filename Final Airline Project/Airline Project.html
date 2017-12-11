@@ -9,20 +9,11 @@
 <script type="text/javascript">
 	
 	//FUNCTIONS
-	function displaysSeatInformation()
-	{
-		document.getElementById('airplane').style.display = 'none';
-		document.getElementById('rightwing').style.display = 'none';
-		document.getElementById('personalInfo').style.display = 'block';
-	}
-	
-	function seatTaken()
-	{
-		alert("This seat is taken. Unavailable for purchase.");
-	}
 	
 	//fucntion that stores user input into an array
-	function storeUserInfo()
+	//writes that information back to the screen
+	var ss;
+	function storeUserInfo(b)
 	{
 		var textInput = new Array();
 		
@@ -40,13 +31,17 @@
 		textInput[11] = document.getElementById('userInput12').value;
 		textInput[12] = document.getElementById('userInput13').value;
 		
+		document.getElementById('personalInfo').style.display = 'none';
+		//document.getElementById('personalInfoFormat').style.display = 'block';
 		
-		document.write("<h2>Ticket Information</h2>" + 
-				"<b>Seat:</b> &nbsp &nbsp; " + 
-				"<br><br><b>Available:</b> &nbsp &nbsp;" +
-				"<br><br><b>Class:</b> &nbsp &nbsp;" + 
-				"<br><br><b>Location</b> &nbsp &nbsp;" + 
-				"<br><br><b>Price:</b> &nbsp &nbsp;" +
+		//document.getElementById("personalInfoFormat").innerHTML;
+		
+		var str = "<h2>Ticket Information</h2>" + 
+				"<b>Seat:</b> &nbsp &nbsp; " + mySeats[b][1] +
+				"<br><br><b>Available:</b> &nbsp &nbsp;" + mySeats[b][2] +
+				"<br><br><b>Class:</b> &nbsp &nbsp;" + mySeats[b][3] +
+				"<br><br><b>Location</b> &nbsp &nbsp;" + mySeats[b][4] +
+				"<br><br><b>Price:</b> &nbsp &nbsp;" + mySeats[b][5] +
 				"<br><br><h2>Flight Information</h2>" + " " + 
 				"<b>From location:</b> &nbsp; &nbsp; Nashville International Airport (BNA)" + 
 				"<br><br><b>To destination:</b> &nbsp; &nbsp; Chicago O'Hare International Airport" + 
@@ -61,22 +56,41 @@
 				"<br><br><b>Primary Phone: </b>&nbsp; &nbsp;" + textInput[8] + 
 				"<br><br><h2>Credit Card Information</h2>" + "<b>Card number: </b>&nbsp; &nbsp;" + textInput[9] + 
 				"<br><br><b>Name on card: </b>&nbsp; &nbsp;" + textInput[10] + 
-				"<br><br><b>Expiration date: </b>&nbsp; &nbsp;" + textInput[11] + " " + textInput[12]);
+				"<br><br><b>Expiration date: </b>&nbsp; &nbsp;" + textInput[11] + " " + textInput[12] + 
+				"<button id='enter' onclick='printOptions()' >Enter</button>";
+		
+		document.getElementById("personalInfoFormat").innerHTML = str;
+
+	}
 	
+	//displays form for user to fill out
+	function displaysSeatInformation(a)
+	{
+		document.getElementById('airplane').style.display = 'none';
+		document.getElementById('rightwing').style.display = 'none';
+		document.getElementById('personalInfo').style.display = 'block';
+		ss = a;
+	}
+	
+	//if the seat is not available
+	function seatTaken()
+	{
+		alert("This seat is taken. Unavailable for purchase.");
 	}
 
-	
+
+	//function to print the final receipt
 	function printOptions() 
 	{
 		window.print();
 	}
- 
 	
 </script>	
 </head>
 
 
 <body>
+
 	
 <script>
 	
@@ -87,63 +101,63 @@
 	//ROW 1
 	
 	//seat 1A
-	mySeats[0][1] = "Seat 1A";
-	mySeats[0][2] = "Available: Yes";
-	mySeats[0][3] = "Class: 1st class";
-	mySeats[0][4] = "Location: Window/Aisle";
+	mySeats[0][1] = "1A";
+	mySeats[0][2] = "Yes";
+	mySeats[0][3] = "1st class";
+	mySeats[0][4] = "Window/Aisle";
 	
 	//seat 1B
 	mySeats[1] = new Array();
-	mySeats[1][1] = "Seat 1B";
-	mySeats[1][2] = "Available: No";
-	mySeats[1][3] = "Class: 1st class";
-	mySeats[1][4] = "Location: Center/Aisle";
+	mySeats[1][1] = "1B";
+	mySeats[1][2] = "No";
+	mySeats[1][3] = "1st class";
+	mySeats[1][4] = "Center/Aisle";
 
 	//seat 1C
 	mySeats[2] = new Array(); 
-	mySeats[2][1] = "Seat 1C";
-	mySeats[2][2] = "Available: No";
-	mySeats[2][3] = "Class: 1st class";
-	mySeats[2][4] = "Location: Window/Aisle";
+	mySeats[2][1] = "1C";
+	mySeats[2][2] = "No";
+	mySeats[2][3] = "1st class";
+	mySeats[2][4] = "Window/Aisle";
 	
 	//ROW 2
 	
 	//seat 2A
 	mySeats[3] = new Array();
-	mySeats[3][1] = "Seat 2A";
-	mySeats[3][2] = "Available: Yes";
-	mySeats[3][3] = "Class: 1st class";
-	mySeats[3][4] = "Location: Window/Aisle";
+	mySeats[3][1] = "2A";
+	mySeats[3][2] = "Yes";
+	mySeats[3][3] = "1st class";
+	mySeats[3][4] = "Window/Aisle";
 	
 	//seat 2B
 	mySeats[4] = new Array();
-	mySeats[4][1] = "Seat 2B";
-	mySeats[4][2] = "Available: Yes";
-	mySeats[4][3] = "Class: 1st class";
-	mySeats[4][4] = "Location: Center/Aisle";
+	mySeats[4][1] = "2B";
+	mySeats[4][2] = "Yes";
+	mySeats[4][3] = "1st class";
+	mySeats[4][4] = "Center/Aisle";
 
 	//seat 2C
 	mySeats[5] = new Array(); 
-	mySeats[5][1] = "Seat 2C";
-	mySeats[5][2] = "Available: Yes";
-	mySeats[5][3] = "Class: 1st class";
-	mySeats[5][4] = "Location: Window/Aisle";
+	mySeats[5][1] = "2C";
+	mySeats[5][2] = "Yes";
+	mySeats[5][3] = "1st class";
+	mySeats[5][4] = "Window/Aisle";
 	
 	//ROW 3
 	
 	//seat 3A
 	mySeats[6] = new Array();
-	mySeats[6][1] = "Seat 3A";
-	mySeats[6][2] = "Available: No";
-	mySeats[6][3] = "Class: 1st class";
-	mySeats[6][4] = "Location: Window/Aisle";
+	mySeats[6][1] = "3A";
+	mySeats[6][2] = "No";
+	mySeats[6][3] = "1st class";
+	mySeats[6][4] = "Window/Aisle";
 	
 	//seat 3B
 	mySeats[7] = new Array();
-	mySeats[7][1] = "Seat 3B";
-	mySeats[7][2] = "Available: Yes";
-	mySeats[7][3] = "Class: 1st class";
-	mySeats[7][4] = "Location: Center/Aisle";
+	mySeats[7][1] = "3B";
+	mySeats[7][2] = "Yes";
+	mySeats[7][3] = "1st class";
+	mySeats[7][4] = "Center/Aisle";
 
 	//seat 3C
 	mySeats[8] = new Array(); 
@@ -248,530 +262,523 @@
 	mySeats[21][4] = "Location: Aisle";
 	
 	//seat 5G
-	mySeats[21] = new Array(); 
-	mySeats[21][1] = "Seat 5G";
-	mySeats[21][2] = "Available: Yes";
-	mySeats[21][3] = "Class: Business class";
-	mySeats[21][4] = "Location: Window";
-	
-	//ROW 6
-	
-	//seat 6A
-	mySeats[22] = new Array();
-	mySeats[22][1] = "Seat 6A";
+	mySeats[22] = new Array(); 
+	mySeats[22][1] = "Seat 5G";
 	mySeats[22][2] = "Available: Yes";
 	mySeats[22][3] = "Class: Business class";
 	mySeats[22][4] = "Location: Window";
 	
-	//seat 6B
+	//ROW 6
+	
+	//seat 6A
 	mySeats[23] = new Array();
-	mySeats[23][1] = "Seat 6B";
-	mySeats[23][2] = "Available: No";
+	mySeats[23][1] = "Seat 6A";
+	mySeats[23][2] = "Available: Yes";
 	mySeats[23][3] = "Class: Business class";
-	mySeats[23][4] = "Location: Aisle";
-
-	//seat 6C
-	mySeats[24] = new Array(); 
-	mySeats[24][1] = "Seat 6C";
-	mySeats[24][2] = "Available: Yes";
+	mySeats[23][4] = "Location: Window";
+	
+	//seat 6B
+	mySeats[24] = new Array();
+	mySeats[24][1] = "Seat 6B";
+	mySeats[24][2] = "Available: No";
 	mySeats[24][3] = "Class: Business class";
 	mySeats[24][4] = "Location: Aisle";
-	
-	//seat 6D
+
+	//seat 6C
 	mySeats[25] = new Array(); 
-	mySeats[25][1] = "Seat 6D";
+	mySeats[25][1] = "Seat 6C";
 	mySeats[25][2] = "Available: Yes";
 	mySeats[25][3] = "Class: Business class";
-	mySeats[25][4] = "Location: Center";
+	mySeats[25][4] = "Location: Aisle";
 	
-	//seat 6E
+	//seat 6D
 	mySeats[26] = new Array(); 
-	mySeats[26][1] = "Seat 6E";
+	mySeats[26][1] = "Seat 6D";
 	mySeats[26][2] = "Available: Yes";
 	mySeats[26][3] = "Class: Business class";
-	mySeats[26][4] = "Location: Aisle";
+	mySeats[26][4] = "Location: Center";
 	
-	//seat 6F
+	//seat 6E
 	mySeats[27] = new Array(); 
-	mySeats[27][1] = "Seat 6F";
+	mySeats[27][1] = "Seat 6E";
 	mySeats[27][2] = "Available: Yes";
 	mySeats[27][3] = "Class: Business class";
 	mySeats[27][4] = "Location: Aisle";
 	
-	//seat 6G
+	//seat 6F
 	mySeats[28] = new Array(); 
-	mySeats[28][1] = "Seat 6G";
+	mySeats[28][1] = "Seat 6F";
 	mySeats[28][2] = "Available: Yes";
 	mySeats[28][3] = "Class: Business class";
-	mySeats[28][4] = "Location: Window";
+	mySeats[28][4] = "Location: Aisle";
 	
-	//ROW 7
-	
-	//seat 7A
-	mySeats[29] = new Array();
-	mySeats[29][1] = "Seat 7A";
+	//seat 6G
+	mySeats[29] = new Array(); 
+	mySeats[29][1] = "Seat 6G";
 	mySeats[29][2] = "Available: Yes";
 	mySeats[29][3] = "Class: Business class";
 	mySeats[29][4] = "Location: Window";
 	
-	//seat 7B
+	//ROW 7
+	
+	//seat 7A
 	mySeats[30] = new Array();
-	mySeats[30][1] = "Seat 7B";
+	mySeats[30][1] = "Seat 7A";
 	mySeats[30][2] = "Available: Yes";
 	mySeats[30][3] = "Class: Business class";
-	mySeats[30][4] = "Location: Aisle";
-
-	//seat 7C
-	mySeats[31] = new Array(); 
-	mySeats[31][1] = "Seat 7C";
-	mySeats[31][2] = "Available: No";
+	mySeats[30][4] = "Location: Window";
+	
+	//seat 7B
+	mySeats[31] = new Array();
+	mySeats[31][1] = "Seat 7B";
+	mySeats[31][2] = "Available: Yes";
 	mySeats[31][3] = "Class: Business class";
 	mySeats[31][4] = "Location: Aisle";
+
+	//seat 7C
+	mySeats[32] = new Array(); 
+	mySeats[32][1] = "Seat 7C";
+	mySeats[32][2] = "Available: No";
+	mySeats[32][3] = "Class: Business class";
+	mySeats[32][4] = "Location: Aisle";
 	
 	//seat 7D
-	mySeats[32] = new Array(); 
-	mySeats[32][1] = "Seat 7D";
-	mySeats[32][2] = "Available: Yes";
-	mySeats[32][3] = "Class: Business class";
-	mySeats[32][4] = "Location: Center";
-	
-	//seat 7E
 	mySeats[33] = new Array(); 
-	mySeats[33][1] = "Seat 7E";
+	mySeats[33][1] = "Seat 7D";
 	mySeats[33][2] = "Available: Yes";
 	mySeats[33][3] = "Class: Business class";
-	mySeats[33][4] = "Location: Aisle";
+	mySeats[33][4] = "Location: Center";
 	
-	//seat 7F
+	//seat 7E
 	mySeats[34] = new Array(); 
-	mySeats[34][1] = "Seat 7F";
+	mySeats[34][1] = "Seat 7E";
 	mySeats[34][2] = "Available: Yes";
 	mySeats[34][3] = "Class: Business class";
 	mySeats[34][4] = "Location: Aisle";
 	
-	//seat 7G
+	//seat 7F
 	mySeats[35] = new Array(); 
-	mySeats[35][1] = "Seat 7G";
+	mySeats[35][1] = "Seat 7F";
 	mySeats[35][2] = "Available: Yes";
 	mySeats[35][3] = "Class: Business class";
-	mySeats[35][4] = "Location: Window";
+	mySeats[35][4] = "Location: Aisle";
 	
-	//ROW 8
-	
-	//seat 8A
-	mySeats[36] = new Array();
-	mySeats[36][1] = "Seat 8A";
+	//seat 7G
+	mySeats[36] = new Array(); 
+	mySeats[36][1] = "Seat 7G";
 	mySeats[36][2] = "Available: Yes";
 	mySeats[36][3] = "Class: Business class";
 	mySeats[36][4] = "Location: Window";
 	
-	//seat 8B
+	//ROW 8
+	
+	//seat 8A
 	mySeats[37] = new Array();
-	mySeats[37][1] = "Seat 8B";
+	mySeats[37][1] = "Seat 8A";
 	mySeats[37][2] = "Available: Yes";
 	mySeats[37][3] = "Class: Business class";
-	mySeats[37][4] = "Location: Aisle";
-
-	//seat 8C
-	mySeats[38] = new Array(); 
-	mySeats[38][1] = "Seat 8C";
+	mySeats[37][4] = "Location: Window";
+	
+	//seat 8B
+	mySeats[38] = new Array();
+	mySeats[38][1] = "Seat 8B";
 	mySeats[38][2] = "Available: Yes";
 	mySeats[38][3] = "Class: Business class";
 	mySeats[38][4] = "Location: Aisle";
-	
-	//seat 8D
+
+	//seat 8C
 	mySeats[39] = new Array(); 
-	mySeats[39][1] = "Seat 8D";
+	mySeats[39][1] = "Seat 8C";
 	mySeats[39][2] = "Available: Yes";
 	mySeats[39][3] = "Class: Business class";
-	mySeats[39][4] = "Location: Center";
+	mySeats[39][4] = "Location: Aisle";
 	
-	//seat 8E
+	//seat 8D
 	mySeats[40] = new Array(); 
-	mySeats[40][1] = "Seat 8E";
+	mySeats[40][1] = "Seat 8D";
 	mySeats[40][2] = "Available: Yes";
 	mySeats[40][3] = "Class: Business class";
-	mySeats[40][4] = "Location: Aisle";
+	mySeats[40][4] = "Location: Center";
 	
-	//seat 8F
+	//seat 8E
 	mySeats[41] = new Array(); 
-	mySeats[41][1] = "Seat 8F";
+	mySeats[41][1] = "Seat 8E";
 	mySeats[41][2] = "Available: Yes";
 	mySeats[41][3] = "Class: Business class";
 	mySeats[41][4] = "Location: Aisle";
 	
-	//seat 8G
+	//seat 8F
 	mySeats[42] = new Array(); 
-	mySeats[42][1] = "Seat 8G";
+	mySeats[42][1] = "Seat 8F";
 	mySeats[42][2] = "Available: Yes";
 	mySeats[42][3] = "Class: Business class";
-	mySeats[42][4] = "Location: Window";
+	mySeats[42][4] = "Location: Aisle";
+	
+	//seat 8G
+	mySeats[43] = new Array(); 
+	mySeats[43][1] = "Seat 8G";
+	mySeats[43][2] = "Available: Yes";
+	mySeats[43][3] = "Class: Business class";
+	mySeats[43][4] = "Location: Window";
 	
 	//ROW 9
 	
 	//seat 9A
-	mySeats[43] = new Array();
-	mySeats[43][1] = "Seat 9A";
-	mySeats[43][2] = "Available: Yes";
-	mySeats[43][3] = "Class: Economy class";
-	mySeats[43][4] = "Location: Window";
-	
-	//seat 9B
 	mySeats[44] = new Array();
-	mySeats[44][1] = "Seat 9B";
+	mySeats[44][1] = "Seat 9A";
 	mySeats[44][2] = "Available: Yes";
 	mySeats[44][3] = "Class: Economy class";
-	mySeats[44][4] = "Location: Aisle";
-
-	//seat 9C
-	mySeats[45] = new Array(); 
-	mySeats[45][1] = "Seat 9C";
+	mySeats[44][4] = "Location: Window";
+	
+	//seat 9B
+	mySeats[45] = new Array();
+	mySeats[45][1] = "Seat 9B";
 	mySeats[45][2] = "Available: Yes";
 	mySeats[45][3] = "Class: Economy class";
 	mySeats[45][4] = "Location: Aisle";
+
+	//seat 9C
+	mySeats[46] = new Array(); 
+	mySeats[46][1] = "Seat 9C";
+	mySeats[46][2] = "Available: Yes";
+	mySeats[46][3] = "Class: Economy class";
+	mySeats[46][4] = "Location: Aisle";
 	
 	//seat 9D
-	mySeats[46] = new Array(); 
-	mySeats[46][1] = "Seat 9D";
-	mySeats[46][2] = "Available: No";
-	mySeats[46][3] = "Class: Economy class";
-	mySeats[46][4] = "Location: Center";
+	mySeats[47] = new Array(); 
+	mySeats[47][1] = "Seat 9D";
+	mySeats[47][2] = "Available: No";
+	mySeats[47][3] = "Class: Economy class";
+	mySeats[47][4] = "Location: Center";
 	
 	//seat 9E
-	mySeats[47] = new Array(); 
-	mySeats[47][1] = "Seat 9E";
-	mySeats[47][2] = "Available: Yes";
-	mySeats[47][3] = "Class: Economy class";
-	mySeats[47][4] = "Location: Aisle";
-	
-	//seat 9F
 	mySeats[48] = new Array(); 
-	mySeats[48][1] = "Seat 9F";
+	mySeats[48][1] = "Seat 9E";
 	mySeats[48][2] = "Available: Yes";
 	mySeats[48][3] = "Class: Economy class";
 	mySeats[48][4] = "Location: Aisle";
 	
-	//seat 9G
+	//seat 9F
 	mySeats[49] = new Array(); 
-	mySeats[49][1] = "Seat 9G";
+	mySeats[49][1] = "Seat 9F";
 	mySeats[49][2] = "Available: Yes";
 	mySeats[49][3] = "Class: Economy class";
-	mySeats[49][4] = "Location: Window";
+	mySeats[49][4] = "Location: Aisle";
+	
+	//seat 9G
+	mySeats[50] = new Array(); 
+	mySeats[50][1] = "Seat 9G";
+	mySeats[50][2] = "Available: Yes";
+	mySeats[50][3] = "Class: Economy class";
+	mySeats[50][4] = "Location: Window";
 	
 	//ROW 10
 	
 	//seat 10A
-	mySeats[50] = new Array();
-	mySeats[50][1] = "Seat 10A";
-	mySeats[50][2] = "Available: No";
-	mySeats[50][3] = "Class: Economy class";
-	mySeats[50][4] = "Location: Window";
-	
-	//seat 10B
 	mySeats[51] = new Array();
-	mySeats[51][1] = "Seat 10B";
+	mySeats[51][1] = "Seat 10A";
 	mySeats[51][2] = "Available: No";
 	mySeats[51][3] = "Class: Economy class";
-	mySeats[51][4] = "Location: Aisle";
-
-	//seat 10C
-	mySeats[52] = new Array(); 
-	mySeats[52][1] = "Seat 10C";
-	mySeats[52][2] = "Available: Yes";
+	mySeats[51][4] = "Location: Window";
+	
+	//seat 10B
+	mySeats[52] = new Array();
+	mySeats[52][1] = "Seat 10B";
+	mySeats[52][2] = "Available: No";
 	mySeats[52][3] = "Class: Economy class";
 	mySeats[52][4] = "Location: Aisle";
-	
-	//seat 10D
+
+	//seat 10C
 	mySeats[53] = new Array(); 
-	mySeats[53][1] = "Seat 10D";
+	mySeats[53][1] = "Seat 10C";
 	mySeats[53][2] = "Available: Yes";
 	mySeats[53][3] = "Class: Economy class";
-	mySeats[53][4] = "Location: Center";
+	mySeats[53][4] = "Location: Aisle";
 	
-	//seat 10E
+	//seat 10D
 	mySeats[54] = new Array(); 
-	mySeats[54][1] = "Seat 10E";
+	mySeats[54][1] = "Seat 10D";
 	mySeats[54][2] = "Available: Yes";
 	mySeats[54][3] = "Class: Economy class";
-	mySeats[54][4] = "Location: Aisle";
+	mySeats[54][4] = "Location: Center";
 	
-	//seat 10F
+	//seat 10E
 	mySeats[55] = new Array(); 
-	mySeats[55][1] = "Seat 10F";
+	mySeats[55][1] = "Seat 10E";
 	mySeats[55][2] = "Available: Yes";
 	mySeats[55][3] = "Class: Economy class";
 	mySeats[55][4] = "Location: Aisle";
 	
-	//seat 10G
+	//seat 10F
 	mySeats[56] = new Array(); 
-	mySeats[56][1] = "Seat 10G";
+	mySeats[56][1] = "Seat 10F";
 	mySeats[56][2] = "Available: Yes";
 	mySeats[56][3] = "Class: Economy class";
-	mySeats[56][4] = "Location: Window";
+	mySeats[56][4] = "Location: Aisle";
 	
-	//ROW 11
-	
-	//seat 11A
-	mySeats[57] = new Array();
-	mySeats[57][1] = "Seat 11A";
+	//seat 10G
+	mySeats[57] = new Array(); 
+	mySeats[57][1] = "Seat 10G";
 	mySeats[57][2] = "Available: Yes";
 	mySeats[57][3] = "Class: Economy class";
 	mySeats[57][4] = "Location: Window";
 	
-	//seat 11B
+	//ROW 11
+	
+	//seat 11A
 	mySeats[58] = new Array();
-	mySeats[58][1] = "Seat 11B";
+	mySeats[58][1] = "Seat 11A";
 	mySeats[58][2] = "Available: Yes";
 	mySeats[58][3] = "Class: Economy class";
-	mySeats[58][4] = "Location: Aisle";
-
-	//seat 11C
-	mySeats[59] = new Array(); 
-	mySeats[59][1] = "Seat 11C";
+	mySeats[58][4] = "Location: Window";
+	
+	//seat 11B
+	mySeats[59] = new Array();
+	mySeats[59][1] = "Seat 11B";
 	mySeats[59][2] = "Available: Yes";
 	mySeats[59][3] = "Class: Economy class";
 	mySeats[59][4] = "Location: Aisle";
-	
-	//seat 11D
+
+	//seat 11C
 	mySeats[60] = new Array(); 
-	mySeats[60][1] = "Seat 11D";
+	mySeats[60][1] = "Seat 11C";
 	mySeats[60][2] = "Available: Yes";
 	mySeats[60][3] = "Class: Economy class";
-	mySeats[60][4] = "Location: Center";
+	mySeats[60][4] = "Location: Aisle";
 	
-	//seat 11E
+	//seat 11D
 	mySeats[61] = new Array(); 
-	mySeats[61][1] = "Seat 11E";
+	mySeats[61][1] = "Seat 11D";
 	mySeats[61][2] = "Available: Yes";
 	mySeats[61][3] = "Class: Economy class";
-	mySeats[61][4] = "Location: Aisle";
+	mySeats[61][4] = "Location: Center";
 	
-	//seat 11F
+	//seat 11E
 	mySeats[62] = new Array(); 
-	mySeats[62][1] = "Seat 11F";
-	mySeats[62][2] = "Available: No";
+	mySeats[62][1] = "Seat 11E";
+	mySeats[62][2] = "Available: Yes";
 	mySeats[62][3] = "Class: Economy class";
 	mySeats[62][4] = "Location: Aisle";
 	
-	//seat 11G
+	//seat 11F
 	mySeats[63] = new Array(); 
-	mySeats[63][1] = "Seat 11G";
-	mySeats[63][2] = "Available: Yes";
+	mySeats[63][1] = "Seat 11F";
+	mySeats[63][2] = "Available: No";
 	mySeats[63][3] = "Class: Economy class";
-	mySeats[63][4] = "Location: Window";
+	mySeats[63][4] = "Location: Aisle";
 	
-	//ROW 12
-	
-	//seat 12A
-	mySeats[64] = new Array();
-	mySeats[64][1] = "Seat 12A";
+	//seat 11G
+	mySeats[64] = new Array(); 
+	mySeats[64][1] = "Seat 11G";
 	mySeats[64][2] = "Available: Yes";
 	mySeats[64][3] = "Class: Economy class";
 	mySeats[64][4] = "Location: Window";
 	
-	//seat 12B
+	//ROW 12
+	
+	//seat 12A
 	mySeats[65] = new Array();
-	mySeats[65][1] = "Seat 12B";
+	mySeats[65][1] = "Seat 12A";
 	mySeats[65][2] = "Available: Yes";
 	mySeats[65][3] = "Class: Economy class";
-	mySeats[65][4] = "Location: Aisle";
+	mySeats[65][4] = "Location: Window";
+	
+	//seat 12B
+	mySeats[66] = new Array();
+	mySeats[66][1] = "Seat 12B";
+	mySeats[66][2] = "Available: Yes";
+	mySeats[66][3] = "Class: Economy class";
+	mySeats[66][4] = "Location: Aisle";
 
 	//seat 12C
-	mySeats[66] = new Array(); 
-	mySeats[66][1] = "Seat 12C";
-	mySeats[66][2] = "Available: Yes";
-	mySeats[66] = "Class: Economy class";
-	mySeats[66][4] = "Location: Aisle";
+	mySeats[67] = new Array(); 
+	mySeats[67][1] = "Seat 12C";
+	mySeats[67][2] = "Available: Yes";
+	mySeats[67] = "Class: Economy class";
+	mySeats[67][4] = "Location: Aisle";
 	
 	//seat 12D
-	mySeats[67] = new Array(); 
-	mySeats[67][1] = "Seat 12D";
-	mySeats[67][2] = "Available: Yes";
-	mySeats[67][3] = "Class: Economy class";
-	mySeats[67][4] = "Location: Center";
-	
-	//seat 12E
 	mySeats[68] = new Array(); 
-	mySeats[68][1] = "Seat 12E";
+	mySeats[68][1] = "Seat 12D";
 	mySeats[68][2] = "Available: Yes";
 	mySeats[68][3] = "Class: Economy class";
-	mySeats[68][4] = "Location: Aisle";
+	mySeats[68][4] = "Location: Center";
 	
-	//seat 12F
+	//seat 12E
 	mySeats[69] = new Array(); 
-	mySeats[69][1] = "Seat 12F";
+	mySeats[69][1] = "Seat 12E";
 	mySeats[69][2] = "Available: Yes";
 	mySeats[69][3] = "Class: Economy class";
 	mySeats[69][4] = "Location: Aisle";
 	
-	//seat 12G
+	//seat 12F
 	mySeats[70] = new Array(); 
-	mySeats[70][1] = "Seat 12G";
+	mySeats[70][1] = "Seat 12F";
 	mySeats[70][2] = "Available: Yes";
 	mySeats[70][3] = "Class: Economy class";
-	mySeats[70][4] = "Location: Window";
+	mySeats[70][4] = "Location: Aisle";
+	
+	//seat 12G
+	mySeats[71] = new Array(); 
+	mySeats[71][1] = "Seat 12G";
+	mySeats[71][2] = "Available: Yes";
+	mySeats[71][3] = "Class: Economy class";
+	mySeats[71][4] = "Location: Window";
 	
 	//ROW 13
 	
 	//seat 13A
-	mySeats[71] = new Array();
-	mySeats[71][1] = "Seat 13A";
-	mySeats[71][2] = "Available: No";
-	mySeats[71][3] = "Class: Economy class";
-	mySeats[71][4] = "Location: Window";
-	
-	//seat 13B
 	mySeats[72] = new Array();
-	mySeats[72][1] = "Seat 13B";
+	mySeats[72][1] = "Seat 13A";
 	mySeats[72][2] = "Available: No";
 	mySeats[72][3] = "Class: Economy class";
-	mySeats[72][4] = "Location: Aisle";
+	mySeats[72][4] = "Location: Window";
+	
+	//seat 13B
+	mySeats[73] = new Array();
+	mySeats[73][1] = "Seat 13B";
+	mySeats[73][2] = "Available: No";
+	mySeats[73][3] = "Class: Economy class";
+	mySeats[73][4] = "Location: Aisle";
 
 	//seat 13C
-	mySeats[73] = new Array(); 
-	mySeats[73][1] = "Seat 13C";
-	mySeats[73][2] = "Available: Yes";
-	mySeats[73] = "Class: Economy class";
-	mySeats[73][4] = "Location: Aisle";
+	mySeats[74] = new Array(); 
+	mySeats[74][1] = "Seat 13C";
+	mySeats[74][2] = "Available: Yes";
+	mySeats[74] = "Class: Economy class";
+	mySeats[74][4] = "Location: Aisle";
 	
 	//seat 13D
-	mySeats[74] = new Array(); 
-	mySeats[74][1] = "Seat 13D";
-	mySeats[74][2] = "Available: Yes";
-	mySeats[74][3] = "Class: Economy class";
-	mySeats[74][4] = "Location: Center";
-	
-	//seat 13E
 	mySeats[75] = new Array(); 
-	mySeats[75][1] = "Seat 13E";
+	mySeats[75][1] = "Seat 13D";
 	mySeats[75][2] = "Available: Yes";
 	mySeats[75][3] = "Class: Economy class";
-	mySeats[75][4] = "Location: Aisle";
+	mySeats[75][4] = "Location: Center";
 	
-	//seat 13F
+	//seat 13E
 	mySeats[76] = new Array(); 
-	mySeats[76][1] = "Seat 13F";
+	mySeats[76][1] = "Seat 13E";
 	mySeats[76][2] = "Available: Yes";
 	mySeats[76][3] = "Class: Economy class";
 	mySeats[76][4] = "Location: Aisle";
 	
-	//seat 13G
+	//seat 13F
 	mySeats[77] = new Array(); 
-	mySeats[77][1] = "Seat 13G";
+	mySeats[77][1] = "Seat 13F";
 	mySeats[77][2] = "Available: Yes";
 	mySeats[77][3] = "Class: Economy class";
-	mySeats[77][4] = "Location: Window";
+	mySeats[77][4] = "Location: Aisle";
 	
-	//ROW 14
-	
-	//seat 14A
-	mySeats[78] = new Array();
-	mySeats[78][1] = "Seat 14A";
+	//seat 13G
+	mySeats[78] = new Array(); 
+	mySeats[78][1] = "Seat 13G";
 	mySeats[78][2] = "Available: Yes";
 	mySeats[78][3] = "Class: Economy class";
 	mySeats[78][4] = "Location: Window";
 	
-	//seat 14B
+	//ROW 14
+	
+	//seat 14A
 	mySeats[79] = new Array();
-	mySeats[79][1] = "Seat 14B";
+	mySeats[79][1] = "Seat 14A";
 	mySeats[79][2] = "Available: Yes";
 	mySeats[79][3] = "Class: Economy class";
-	mySeats[79][4] = "Location: Aisle";
+	mySeats[79][4] = "Location: Window";
+	
+	//seat 14B
+	mySeats[80] = new Array();
+	mySeats[80][1] = "Seat 14B";
+	mySeats[80][2] = "Available: Yes";
+	mySeats[80][3] = "Class: Economy class";
+	mySeats[80][4] = "Location: Aisle";
 
 	//seat 14C
-	mySeats[80] = new Array(); 
-	mySeats[80][1] = "Seat 14C";
-	mySeats[80][2] = "Available: Yes";
-	mySeats[80] = "Class: Economy class";
-	mySeats[80][4] = "Location: Aisle";
+	mySeats[81] = new Array(); 
+	mySeats[81][1] = "Seat 14C";
+	mySeats[81][2] = "Available: Yes";
+	mySeats[81] = "Class: Economy class";
+	mySeats[81][4] = "Location: Aisle";
 	
 	//seat 14D
-	mySeats[81] = new Array(); 
-	mySeats[81][1] = "Seat 14D";
-	mySeats[81][2] = "Available: Yes";
-	mySeats[81][3] = "Class: Economy class";
-	mySeats[81][4] = "Location: Center";
-	
-	//seat 14E
 	mySeats[82] = new Array(); 
-	mySeats[82][1] = "Seat 14E";
+	mySeats[82][1] = "Seat 14D";
 	mySeats[82][2] = "Available: Yes";
 	mySeats[82][3] = "Class: Economy class";
-	mySeats[82][4] = "Location: Aisle";
+	mySeats[82][4] = "Location: Center";
 	
-	//seat 14F
+	//seat 14E
 	mySeats[83] = new Array(); 
-	mySeats[83][1] = "Seat 14F";
+	mySeats[83][1] = "Seat 14E";
 	mySeats[83][2] = "Available: Yes";
 	mySeats[83][3] = "Class: Economy class";
 	mySeats[83][4] = "Location: Aisle";
 	
-	//seat 14G
+	//seat 14F
 	mySeats[84] = new Array(); 
-	mySeats[84][1] = "Seat 14G";
+	mySeats[84][1] = "Seat 14F";
 	mySeats[84][2] = "Available: Yes";
 	mySeats[84][3] = "Class: Economy class";
-	mySeats[84][4] = "Location: Window";
+	mySeats[84][4] = "Location: Aisle";
 	
-	//ROW 15
-	
-	//seat 15A
-	mySeats[85] = new Array();
-	mySeats[85][1] = "Seat 15A";
+	//seat 14G
+	mySeats[85] = new Array(); 
+	mySeats[85][1] = "Seat 14G";
 	mySeats[85][2] = "Available: Yes";
 	mySeats[85][3] = "Class: Economy class";
 	mySeats[85][4] = "Location: Window";
 	
-	//seat 15B
+	//ROW 15
+	
+	//seat 15A
 	mySeats[86] = new Array();
-	mySeats[86][1] = "Seat 15B";
+	mySeats[86][1] = "Seat 15A";
 	mySeats[86][2] = "Available: Yes";
 	mySeats[86][3] = "Class: Economy class";
-	mySeats[86][4] = "Location: Aisle";
+	mySeats[86][4] = "Location: Window";
+	
+	//seat 15B
+	mySeats[87] = new Array();
+	mySeats[87][1] = "Seat 15B";
+	mySeats[87][2] = "Available: Yes";
+	mySeats[87][3] = "Class: Economy class";
+	mySeats[87][4] = "Location: Aisle";
 
 	//seat 15C
-	mySeats[87] = new Array(); 
-	mySeats[87][1] = "Seat 15C";
-	mySeats[87][2] = "Available: Yes";
-	mySeats[87] = "Class: Economy class";
-	mySeats[87][4] = "Location: Aisle";
+	mySeats[88] = new Array(); 
+	mySeats[88][1] = "Seat 15C";
+	mySeats[88][2] = "Available: Yes";
+	mySeats[88] = "Class: Economy class";
+	mySeats[88][4] = "Location: Aisle";
 	
 	//seat 15D
-	mySeats[88] = new Array(); 
-	mySeats[88][1] = "Seat 15D";
-	mySeats[88][2] = "Available: Yes";
-	mySeats[88][3] = "Class: Economy class";
-	mySeats[88][4] = "Location: Center";
-	
-	//seat 15E
 	mySeats[89] = new Array(); 
-	mySeats[89][1] = "Seat 15E";
+	mySeats[89][1] = "Seat 15D";
 	mySeats[89][2] = "Available: Yes";
 	mySeats[89][3] = "Class: Economy class";
-	mySeats[89][4] = "Location: Aisle";
+	mySeats[89][4] = "Location: Center";
 	
-	//seat 15F
+	//seat 15E
 	mySeats[90] = new Array(); 
-	mySeats[90][1] = "Seat 15F";
-	mySeats[90][2] = "Available: No";
+	mySeats[90][1] = "Seat 15E";
+	mySeats[90][2] = "Available: Yes";
 	mySeats[90][3] = "Class: Economy class";
 	mySeats[90][4] = "Location: Aisle";
 	
-	//seat 15G
+	//seat 15F
 	mySeats[91] = new Array(); 
-	mySeats[91][1] = "Seat 15G";
+	mySeats[91][1] = "Seat 15F";
 	mySeats[91][2] = "Available: No";
 	mySeats[91][3] = "Class: Economy class";
-	mySeats[91][4] = "Location: Window";
+	mySeats[91][4] = "Location: Aisle";
 	
+	//seat 15G
+	mySeats[92] = new Array(); 
+	mySeats[92][1] = "Seat 15G";
+	mySeats[92][2] = "Available: No";
+	mySeats[92][3] = "Class: Economy class";
+	mySeats[92][4] = "Location: Window";
 	
-	
-	
-	//ARRAYS FOR USER INPUT INTO A FORM
-	var userInformation = new Array();
-	
-	
-	
+
 	
 </script>			
 	
@@ -862,7 +869,7 @@
 				<td colspan="2">
 					<div class="tooltip">
 						<img name="1A" src="Largeopen.png" alt="Large seat" width=".8" height=".8" 
-							 onclick="displaysSeatInformation()"/>
+							 onclick="displaysSeatInformation(0)"/>
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -904,7 +911,7 @@
 				<td colspan="3">
 					<div class="tooltip">
 						<img name="1B" src="Largeclosed.png" alt="Large seat" width=".8" height=".8" 
-							 onclick="seatTaken()" />
+							 onclick="seatTaken(1)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -946,7 +953,7 @@
 				<td colspan="2">
 					<div class="tooltip">
 						<img name="1C" src="Largeclosed.png" alt="Large seat" width=".8" height=".8" 
-							 onclick="seatTaken()" />
+							 onclick="seatTaken(2)" />
 					<!--SEAT TAKEN-->
 					<span class="tooltiptext">
 	 				 		
@@ -999,7 +1006,7 @@
 				<td colspan="2">
 					<div class="tooltip">
 					<img name="2A" src="Largeopen.png" alt="Large seat" width=".8" height=".8" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(3)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -1040,7 +1047,7 @@
 				</td>
 				<td colspan="3">
 					<div class="tooltip">
-					<img name="2B" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="displaysSeatInformation()" />
+					<img name="2B" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="displaysSeatInformation(4)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -1081,7 +1088,7 @@
 				</td>
 				<td colspan="2">
 					<div class="tooltip">
-					<img name="2C" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="displaysSeatInformation()" />
+					<img name="2C" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="displaysSeatInformation(5)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -1126,7 +1133,7 @@
 				</td>
 				<td colspan="2">
 					<div class="tooltip">
-					<img name="3A" src="Largeclosed.png" alt="Large seat" width=".8" height=".8" onclick="seatTaken()" />
+					<img name="3A" src="Largeclosed.png" alt="Large seat" width=".8" height=".8" onclick="seatTaken(6)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -1167,7 +1174,7 @@
 				</td>
 				<td colspan="3">
 					<div class="tooltip">
-					<img name="3B" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="displaysSeatInformation()" />
+					<img name="3B" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="displaysSeatInformation(7)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -1208,7 +1215,7 @@
 				</td>
 				<td colspan="2">
 					<div class="tooltip">
-					<img name="3C" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="displaysSeatInformation()" />
+					<img name="3C" src="Largeopen.png" alt="Large seat" width=".8" height=".8" onclick="displaysSeatInformation(8)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -1332,7 +1339,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="4A" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(9)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -1366,12 +1373,13 @@
 						</tr>
 						</table>
 					</span>
+					
 					</div>
 				</td>
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="4B" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(10)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -1413,7 +1421,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="4C" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(11)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -1452,7 +1460,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="4D" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(12)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -1491,7 +1499,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="4E" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(13)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -1533,7 +1541,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="4F" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(14)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -1572,7 +1580,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="4G" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(15)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -1618,7 +1626,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="5A" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(16)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -1657,7 +1665,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="5B" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(17)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -1699,7 +1707,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="5C" src="closed.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="seatTaken()" />
+						 onclick="seatTaken(18)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -1738,7 +1746,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="5D" src="closed.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="seatTaken()" />
+						 onclick="seatTaken(19)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -1777,7 +1785,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="5E" src="closed.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="seatTaken()" />
+						 onclick="seatTaken(20)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -1819,7 +1827,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="5F" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(21)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -1858,7 +1866,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="5G" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(22)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -1904,7 +1912,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="6A" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(23)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -1943,7 +1951,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="6B" src="closed.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="seatTaken()" />
+						 onclick="seatTaken(24)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -1985,7 +1993,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="6C" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(25)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2024,7 +2032,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="6D" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(26)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2063,7 +2071,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="6E" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(27)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2105,7 +2113,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="6F" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(28)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2144,7 +2152,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="6G" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(29)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2190,7 +2198,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat7A" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(30)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2229,7 +2237,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat7B" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(31)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2271,7 +2279,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat7C" src="closed.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="seatTaken()" />
+						 onclick="seatTaken(32)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2310,7 +2318,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat7D" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(33)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2349,7 +2357,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat7E" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(34)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2391,7 +2399,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat7F" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(35)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2430,7 +2438,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat7G" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(36)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2476,7 +2484,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat8A" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(37)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2515,7 +2523,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat8B" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(38)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2557,7 +2565,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat8C" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(39)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2596,7 +2604,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat8D" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(40)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2635,7 +2643,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat8E" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(41)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2677,7 +2685,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat8F" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(42)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2716,7 +2724,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat8G" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(43)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2762,7 +2770,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat9A" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(44)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2801,7 +2809,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat9B" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(45)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2843,7 +2851,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat9C" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(46)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2882,7 +2890,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat9D" src="closed.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="seatTaken()" />
+						 onclick="seatTaken(47)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2921,7 +2929,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat9E" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(48)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -2963,7 +2971,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat9F" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(49)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3002,7 +3010,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat9G" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(50)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3048,7 +3056,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat10A" src="closed.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="seatTaken()" />
+						 onclick="seatTaken(51)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3087,7 +3095,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat10B" src="closed.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="seatTaken()" />
+						 onclick="seatTaken(52)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3129,7 +3137,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat10C" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(53)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3168,7 +3176,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat10D" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(54)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3207,7 +3215,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat10E" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(55)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3249,7 +3257,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat10F" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(56)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3288,7 +3296,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat10G" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(57)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3334,7 +3342,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat11A" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(58)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3373,7 +3381,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat11B" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(59)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3415,7 +3423,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat11C" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(60)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3454,7 +3462,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat11D" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(61)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3493,7 +3501,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat11E" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(62)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3535,7 +3543,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat11F" src="closed.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="seatTaken()" />
+						 onclick="seatTaken(63)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3574,7 +3582,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat11G" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(64)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3620,7 +3628,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat12A" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(65)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3659,7 +3667,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat12B" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(66)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3701,7 +3709,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat12C" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(67)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3740,7 +3748,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat12D" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(68)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3779,7 +3787,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat12E" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(69)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3821,7 +3829,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat12F" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(70)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3860,7 +3868,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat12G" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(71)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3906,7 +3914,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat13A" src="closed.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="seatTaken()" />
+						 onclick="seatTaken(72)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3945,7 +3953,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat13B" src="closed.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="seatTaken()" />
+						 onclick="seatTaken(73)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -3987,7 +3995,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat13C" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(74)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -4026,7 +4034,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat13D" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(75)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -4065,7 +4073,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat13E" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(76)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -4107,7 +4115,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat13F" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(77)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -4146,7 +4154,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat13G" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(78)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -4192,7 +4200,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat14A" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(79)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -4231,7 +4239,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat14B" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(80)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -4273,7 +4281,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat14C" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(81)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -4312,7 +4320,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat14D" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(82)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -4351,7 +4359,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat14E" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(83)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -4393,7 +4401,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat14F" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(84)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -4432,7 +4440,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat14G" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(85)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -4478,7 +4486,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat15A" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(86)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -4517,7 +4525,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat15B" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(87)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -4559,7 +4567,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat15C" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(88)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -4598,7 +4606,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat15D" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(89)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -4637,7 +4645,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat15E" src="open.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="displaysSeatInformation()" />
+						 onclick="displaysSeatInformation(90)" />
 					<span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -4679,7 +4687,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat15F" src="closed.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="seatTaken()" />
+						 onclick="seatTaken(91)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -4718,7 +4726,7 @@
 				<td colspan="1">
 					<div class="tooltip">
 					<img name="seat15G" src="closed.png" alt="Small seat" width=".5" height=".5" 
-						 onclick="seatTaken()" />
+						 onclick="seatTaken(92)" />
 					 <span class="tooltiptext">
 	 				 		
 						<table border="0">
@@ -4794,8 +4802,6 @@
 
 	</form>	
 </div>		
-
-
 	
 	<!--Form that displays when user clicks on a seat -->
 	<div id="personalInfo" style="display:none">
@@ -4927,7 +4933,7 @@
 			</tr>
 			<tr>
 				<td>
-					<br><br><button id="Next" onclick="storeUserInfo()">Next</button>
+					<br><br><input value="Next" id="next" type="button" name="next" onclick="storeUserInfo(ss)"/>
 				</td>
 			
 			</tr>
@@ -4936,15 +4942,22 @@
 		
 	</form>
 	</div>
+	
+	
+	
+	
+<p id="personalInfoFormat">
+		
+</p> 
 
 	
-	<!--<p>Click the button to print the current page.</p>
-	<button onclick="printOptions()">Print this page</button>-->
 	
+	<!--right wing airplane display-->
 	<div id="rightwing">
 		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 		<img class="rightwing" name="rightwing" src="rightwing.png" alt="right wing" width=" " height=" " />	
 	</div>
+	
 
 </body>
 </html>
